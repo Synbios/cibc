@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <title><%= yield(:title) %></title>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Web Fonts -->
+  <link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Roboto+Slab:400,300,700'>
+
+  <!-- Local Fonts and CSS -->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  
+  <!-- CSS Global Compulsory -->
+  <link rel="stylesheet" href="unify/assets/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="unify/assets/css/style.css">
+
+  <!-- CSS Header and Footer -->
+  <link rel="stylesheet" href="unify/assets/css/headers/header-default.css">
+  <link rel="stylesheet" href="unify/assets/css/footers/footer-v1.css">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="unify/assets/plugins/animate.css">
+  <link rel="stylesheet" href="unify/assets/plugins/line-icons/line-icons.css">
+  <link rel="stylesheet" href="unify/assets/plugins/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="unify/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+  <link rel="stylesheet" href="unify/assets/plugins/revolution-slider/rs-plugin/css/settings.css" type="text/css" media="screen">
+  <!--[if lt IE 9]><link rel="stylesheet" href="unify/assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css" type="text/css" media="screen"><![endif]-->
+
+  <!-- CSS Pages Style -->
+  <link rel="stylesheet" href="unify/assets/css/pages/shortcode_timeline2.css">
+  <link rel="stylesheet" href="unify/assets/css/pages/pricing/pricing_v1.css">
+
+  <!-- CSS Customization -->
+  <link rel="stylesheet" href="unify/assets/css/custom.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <%#= render "layouts/header" %>
+
+    <%= yield %>
+
+  
+
+
+  <%#= render "layouts/footer" %>
+  </div><!--/wrapper-->
+
+<!-- JS Global Compulsory -->
+<script src="unify/assets/plugins/jquery/jquery.min.js"></script>
+<script src="unify/assets/plugins/jquery/jquery-migrate.min.js"></script>
+<script src="unify/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- JS Implementing Plugins -->
+<script src="unify/assets/plugins/back-to-top.js"></script>
+<script src="unify/assets/plugins/smoothScroll.js"></script>
+<script type="text/javascript" src="unify/assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
+<script type="text/javascript" src="unify/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="unify/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+<!-- JS Customization -->
+<script src="unify/assets/js/custom.js"></script>
+
+<!-- JS Page Level -->
+<script src="unify/assets/js/app.js"></script>
+<script type="text/javascript" src="unify/assets/js/plugins/owl-carousel.js"></script>
+<script type="text/javascript" src="unify/assets/js/plugins/revolution-slider.js"></script>
+
+<!-- weixin -->
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+
+<script>
+jQuery(document).ready(function() {
+  App.init();
+  OwlCarousel.initOwlCarousel();
+  RevolutionSlider.initRSfullWidth();
+});
+</script>
+
+<!--[if lt IE 9]>
+  <script src="unify/assets/plugins/respond.js"></script>
+  <script src="unify/assets/plugins/html5shiv.js"></script>
+  <script src="unify/assets/plugins/placeholder-IE-fixes.js"></script>
+  <![endif]-->
+</body>
+</html>
