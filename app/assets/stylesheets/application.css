@@ -97,3 +97,39 @@
     border: none;
     top: 50%;
 }
+
+/* para images */
+.bg-image-c1 {
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+  position: relative;
+  background: url(/img/hobbiton-1.jpg) repeat fixed; 
+}
+.bg-image-c1:before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  content: " ";
+  position: absolute;
+  background: rgba(0,0,0,0.5);
+}
+
+.bg-image-c2 {
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+  position: relative;
+  background: url(/img/hobbiton-1.jpg) repeat fixed;
+}
+
+.bg-image-c2:before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  content: " ";
+  position: absolute;
+  background: rgba(255,255,255,0.7);
+}
