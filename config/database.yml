@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: cibc_production
-  username: cibc
+  username: root
   password: <%= ENV['CIBC_DATABASE_PASSWORD'] %>
