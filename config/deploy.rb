@@ -1,5 +1,5 @@
 # Change these
-server '182.61.31.31', port: 22229, roles: [:web, :app, :db], primary: true
+server '182.61.31.31', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:Synbios/cibc.git'
 set :application,     'cibc'

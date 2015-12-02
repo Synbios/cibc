@@ -49,7 +49,7 @@ group :development, :test do
   gem 'capistrano3-puma',   require: false
 end
 group :production do
-  gem 'pg'
+  #gem 'pg'
 end
 
 gem 'puma'
