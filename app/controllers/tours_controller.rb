@@ -29,4 +29,8 @@ class ToursController < ApplicationController
   def ax16
   	render layout: "unify-tour"
   end
+
+  def sample
+  	render layout: "shijiebang"
+  end
 end
