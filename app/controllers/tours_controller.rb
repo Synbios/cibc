@@ -23,7 +23,7 @@ class ToursController < ApplicationController
   	render "ax12_wx", layout: "unify-tour"
   end
   def ax13
-  	render layout: "unify-tour"
+  	render layout: "shijiebang"
   end
 
   def ax16
