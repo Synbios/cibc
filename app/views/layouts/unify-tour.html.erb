@@ -38,7 +38,7 @@
   <!-- CSS Pages Style -->
   <link rel="stylesheet" href="unify/assets/css/pages/shortcode_timeline2.css">
   <link rel="stylesheet" href="unify/assets/css/pages/pricing/pricing_v1.css">
-  <link rel="stylesheet" href="assets/plugins/fancybox/source/jquery.fancybox.css">
+  <link rel="stylesheet" href="unify/assets/plugins/fancybox/source/jquery.fancybox.css">
 
   <!-- CSS Customization -->
   <link rel="stylesheet" href="unify/assets/css/custom.css">
@@ -83,10 +83,28 @@
 <script>
 jQuery(document).ready(function() {
   App.init();
-  OwlCarousel.initOwlCarousel();
+  //OwlCarousel.initOwlCarousel();
   RevolutionSlider.initRSfullWidth();
   App.initParallaxBg();
+
+  $(".fw-slider").owlCarousel({
+      navigation: false, // Show next and prev buttons
+      slideSpeed: 300,
+      pagination: true,
+      paginationSpeed: 400,
+      singleItem: true,
+      lazyLoad: true
+ 
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+ 
+  });
 });
+
 </script>
 
 <!--[if lt IE 9]>
