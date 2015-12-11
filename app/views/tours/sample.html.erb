@@ -172,6 +172,28 @@
   <%= image_tag "/img/huang/map.jpg", style: "width:100%" %>
 </div>
 
+<div id="itinery_slider" class="owl-carousel owl-theme">
+  <div class="item" id="slide_day_1">
+    <%= image_tag "huang/sample_day_slide.jpg" %>
+  </div>
+  <div class="item" id="slide_day_2">
+    <%= image_tag "huang/sample_day_slide.jpg" %>
+  </div>
+  <div class="item" id="slide_day_3">
+    <%= image_tag "huang/sample_day_slide.jpg" %>
+  </div>
+  <div class="item" id="slide_day_4">
+    <%= image_tag "huang/sample_day_slide.jpg" %>
+  </div>
+  <div class="item" id="slide_day_5">
+    <%= image_tag "huang/sample_day_slide.jpg" %>
+  </div>
+  <div class="item" id="slide_day_6">
+    <%= image_tag "huang/sample_day_slide.jpg" %>
+  </div>
+</div>
+
+
 <div class="container">
   <div class="tab-v1 huang_price">
     <ul class="nav nav-tabs" style="background-color: #eee; padding-top: 0px">
@@ -292,6 +314,20 @@
   </div>
 </div>
 
+<div class="container">
+  <%= month_calendar do |date| %>
+    <%= date %>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="tag-box tag-box-v3 margin-bottom-20 telephone">
+    <h2>产品: 浪漫日本本州6日</h2>
+    <a href="tel:5551234567" class="btn-u btn-u-orange" type="button">电话咨询</a>
+  </div>
+</div>
+
+
 
 <div class="panel-group acc-v1 huang_accordion" id="accordion-1">
   <h3 class="according_heading">预定须知</h3>
@@ -392,7 +428,53 @@
   </div>
 </div>
 
-<%= month_calendar do |date| %>
-  <%= date %>
-<% end %>
 
+
+<% content_for :script do %>
+<script>
+  $(document).ready(function() {
+ 
+    var owl = $("#itinery_slider");
+    owl.owlCarousel({
+   
+      items : 10, //10 items above 1000px browser width
+      itemsDesktop : [1000,8], //5 items between 1000px and 901px
+      itemsDesktopSmall : [900,6], // betweem 900px and 601px
+      itemsTablet: [600,4], //2 items between 600 and 0
+      itemsMobile : 4, // itemsMobile disabled - inherit from itemsTablet option
+      navigation: false,
+      pagination: false
+
+    });
+ 
+    $('#slide_day_1').on('click', function(event){
+      $('#modal_day_1').modal('show');
+      
+    });
+ 
+  });
+</script>
+<% end %>
+<% content_for :modals do %>
+<div id="modal_day_1" class="modal fade modal_itinery">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">第一天: 成都 - 日本</h4>
+            </div>
+            <div class="modal-body itinery_modal_body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel vehicula erat. Phasellus vestibulum leo eu mi tempor blandit. Suspendisse eget iaculis lectus. Donec vitae tempus enim, quis tristique magna. Donec lobortis, sem ac pretium viverra, leo nisl consequat arcu, sit amet ullamcorper nunc turpis ac erat. In rutrum auctor ligula, quis mattis enim lacinia eu. Aliquam at magna a erat laoreet iaculis quis a justo. Donec porttitor vulputate massa, nec suscipit nisi mollis sed.</p>
+                <p>Praesent sit amet porttitor magna, auctor feugiat tellus. Sed venenatis tortor turpis, vel vestibulum eros pulvinar et. Pellentesque hendrerit diam quis dui euismod tincidunt. Sed sit amet mauris ipsum. Integer in magna tellus. In tincidunt mi quis nunc gravida sollicitudin. Aliquam ac dui eget erat consequat volutpat in eu magna.</p>
+                <p>Sed feugiat bibendum leo consequat convallis. Donec facilisis, turpis a scelerisque venenatis, felis diam dictum tortor, vitae imperdiet tortor ligula eu lectus. Donec iaculis semper elementum. Nullam dapibus porttitor magna quis convallis. Morbi porttitor quam non magna ullamcorper rhoncus. Phasellus sit amet nunc at turpis pharetra luctus a a massa. Praesent luctus massa in odio faucibus eleifend.</p>
+                <p>In eget lobortis leo, ut luctus odio. Mauris pharetra erat ac tellus hendrerit semper. Cras faucibus ipsum id ante hendrerit rutrum. Donec vitae ullamcorper arcu. Aliquam pellentesque faucibus placerat. Aliquam erat volutpat. In tincidunt metus sit amet ligula sagittis vehicula. Pellentesque velit quam, hendrerit a erat ac, fermentum tincidunt enim. Cras suscipit justo nec consectetur lacinia.</p>
+                <p>Cras pellentesque urna a leo egestas, at ullamcorper augue suscipit. Nulla id lacinia magna, non iaculis est. Praesent a placerat augue, eget eleifend purus. Aenean dignissim, orci et rutrum facilisis, tellus massa porta nulla, quis hendrerit dui ipsum vitae urna. In mattis lectus dolor, id venenatis lectus pellentesque at. Suspendisse posuere metus vel bibendum dignissim. Fusce interdum magna id libero scelerisque suscipit. Duis orci augue, rhoncus eget pharetra ac, viverra nec magna. In accumsan nulla ac suscipit pellentesque. Nulla iaculis luctus tellus, at ultricies urna hendrerit a. Aenean vehicula sodales varius. Duis sodales hendrerit odio non sagittis.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-u btn-u-orange">上一天</button>
+                <button type="button" class="btn-u btn-u-light-green" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn-u btn-u-orange">下一天</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<% end %>

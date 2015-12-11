@@ -1,4 +1,7 @@
 class ToursController < ApplicationController
+  before_action :set_locale
+ 
+
   def show
   	render layout: "unify"
   end
@@ -32,5 +35,10 @@ class ToursController < ApplicationController
 
   def sample
   	render layout: "shijiebang"
+  end
+
+  private
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
   end
 end

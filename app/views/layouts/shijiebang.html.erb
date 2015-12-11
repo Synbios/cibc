@@ -55,6 +55,7 @@
   <%#= render "layouts/footer" %>
   </div><!--/wrapper-->
 
+<%= yield :modals %>
 <!-- JS Global Compulsory -->
 <script src="unify/assets/plugins/jquery/jquery.min.js"></script>
 <script src="unify/assets/plugins/jquery/jquery-migrate.min.js"></script>
@@ -87,6 +88,7 @@ jQuery(document).ready(function() {
   App.initParallaxBg();
 });
 </script>
+<%= yield :script %>
 
 <!--[if lt IE 9]>
   <script src="unify/assets/plugins/respond.js"></script>

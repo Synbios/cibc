@@ -265,3 +265,141 @@ a.accordion-toggle {
 .huang_accordion .panel-body ol{
   margin-left: -10px;
 }
+
+
+
+
+.panel.with-nav-tabs .panel-heading{
+    padding: 5px 5px 0 5px;
+    background-color: #666;
+}
+.panel.with-nav-tabs .nav-tabs{
+  border-bottom: none;
+}
+.panel.with-nav-tabs .nav-justified{
+  margin-bottom: -1px;
+}
+
+
+
+.with-nav-tabs.panel-success .nav-tabs{
+  background-color: #666;
+  color: #fff;
+}
+.with-nav-tabs.panel-success .nav-tabs > li{
+  width: 33%;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+}
+.with-nav-tabs.panel-success .nav-tabs > li > a small{
+  font-size: 12px;
+}
+
+.with-nav-tabs.panel-success .nav-tabs > li > a,
+.with-nav-tabs.panel-success .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-success .nav-tabs > li > a:focus {
+  color: #fff;
+}
+.with-nav-tabs.panel-success .nav-tabs > .open > a,
+.with-nav-tabs.panel-success .nav-tabs > .open > a:hover,
+.with-nav-tabs.panel-success .nav-tabs > .open > a:focus,
+.with-nav-tabs.panel-success .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-success .nav-tabs > li > a:focus {
+  color: #3c763d;
+  border-color: transparent;
+}
+.with-nav-tabs.panel-success .nav-tabs > li.active > a,
+.with-nav-tabs.panel-success .nav-tabs > li.active > a:hover,
+.with-nav-tabs.panel-success .nav-tabs > li.active > a:focus {
+  color: #3c763d;
+  background-color: #eee;
+  border-color: #d6e9c6;
+  border-bottom-color: transparent;
+}
+
+
+.with-nav-tabs.panel-success .panel-body {
+  padding: 0;
+}
+
+.simple-calendar table {
+ border: 1px solid #ddd;
+ border-top: none;
+ border-collapse: collapse;
+ font-family: Georgia, Times, serif;
+}
+.simple-calendar table th {
+ border: 1px solid #ddd;
+ border-top: none;
+ background-color: #eee;
+ height: 50px;
+ padding: 5px;
+ vertical-align: middle !important; 
+ text-align: center;
+}
+.simple-calendar table td {
+ border: 1px solid #ddd;
+ background-color: #fff;
+ height: 50px;
+ vertical-align: top;
+}
+
+.simple-calendar table .day {
+ text-align: right;
+}
+
+.simple-calendar .prev-month {
+  color: #ddd;
+}
+.simple-calendar .next-month {
+  color: #ddd;
+}
+
+
+.telephone{
+  border: 1px solid orange;
+  background-color: #fcf8e3;
+}
+.telephone a {
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+
+#itinery_slider .item{
+  margin: 3px;
+}
+#itinery_slider .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+  
+.itinery_modal_body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+
+
+
+.modal_itinery .modal-footer {
+  text-align: center;
+}
+.modal_itinery .modal-footer button {
+  width: 30%;
+}
+.modal_itinery .modal-content {
+  border-radius: 0;
+}
+.modal_itinery .modal-header {
+  background-color: #e67e22;
+}
+.modal_itinery .modal-footer {
+  background-color: #eee;
+}
+.modal_itinery .modal-header h4 {
+  color: #fff;
+}
