@@ -1,6 +1,6 @@
 class ToursController < ApplicationController
   before_action :set_locale
- 
+  #protect_from_forgery except: :calendar
 
   def show
   	render layout: "unify"
@@ -35,6 +35,12 @@ class ToursController < ApplicationController
 
   def sample
   	render layout: "shijiebang"
+  end
+
+  def calendar
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

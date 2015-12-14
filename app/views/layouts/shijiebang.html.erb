@@ -57,7 +57,7 @@
 
 <%= yield :modals %>
 <!-- JS Global Compulsory -->
-<script src="unify/assets/plugins/jquery/jquery.min.js"></script>
+<%= javascript_include_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 <script src="unify/assets/plugins/jquery/jquery-migrate.min.js"></script>
 <script src="unify/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 <!-- JS Implementing Plugins -->

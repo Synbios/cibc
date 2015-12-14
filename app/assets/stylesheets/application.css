@@ -237,6 +237,10 @@ div.huang_features
   font-size: 30px
 }
 
+.huang_price .tab-pane li {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
 .huang_accordion{
   margin-bottom: 0;
 }
@@ -379,7 +383,7 @@ a.accordion-toggle {
 }
   
 .itinery_modal_body {
-    max-height: calc(100vh - 210px);
+    height: calc(100vh - 210px);
     overflow-y: auto;
 }
 

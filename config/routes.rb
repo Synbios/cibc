@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   match '/ax13', to: 'tours#ax13', via: 'get'
   match '/ax16', to: 'tours#ax16', via: 'get'
   match '/sample', to: 'tours#sample', via: 'get'
+
+  match '/tour/calendar', to: 'tours#calendar', via: 'get' 
   
 
   # The priority is based upon order of creation: first created -> highest priority.
