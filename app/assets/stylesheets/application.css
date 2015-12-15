@@ -238,8 +238,8 @@ div.huang_features
 }
 
 .huang_price .tab-pane li {
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .huang_accordion{
   margin-bottom: 0;
@@ -328,6 +328,7 @@ a.accordion-toggle {
 }
 
 .simple-calendar table {
+  table-layout: fixed;
  border: 1px solid #ddd;
  border-top: none;
  border-collapse: collapse;
@@ -343,10 +344,20 @@ a.accordion-toggle {
  text-align: center;
 }
 .simple-calendar table td {
+  padding: 3px !important;
+  position: relative;
  border: 1px solid #ddd;
  background-color: #fff;
  height: 50px;
  vertical-align: top;
+}
+
+.simple-calendar table td span.message {
+  color: red;
+  position: absolute;
+  right: 3px;    
+  bottom: 3px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .simple-calendar table .day {

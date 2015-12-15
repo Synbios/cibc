@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :departures
+
   match '/japan', to: 'tours#show', via: 'get'
   match '/maoxian88', to: 'tours#maoxian88', via: 'get'
   match '/maoxian_vinery', to: 'tours#maoxian_vinery', via: 'get'
@@ -9,6 +11,8 @@ Rails.application.routes.draw do
   match '/ax13', to: 'tours#ax13', via: 'get'
   match '/ax16', to: 'tours#ax16', via: 'get'
   match '/sample', to: 'tours#sample', via: 'get'
+
+  match '/huang', to: 'tours#huang', via: 'get'
 
   match '/tour/calendar', to: 'tours#calendar', via: 'get' 
   

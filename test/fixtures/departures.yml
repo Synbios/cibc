@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tour_id: 1
+  start_time: 2015-12-15 14:43:03
+  seats: 1
+  price: 1
+
+two:
+  tour_id: 1
+  start_time: 2015-12-15 14:43:03
+  seats: 1
+  price: 1

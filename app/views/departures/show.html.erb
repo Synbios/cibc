@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tour:</strong>
+  <%= @departure.tour_id %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @departure.start_time %>
+</p>
+
+<p>
+  <strong>Seats:</strong>
+  <%= @departure.seats %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @departure.price %>
+</p>
+
+<%= link_to 'Edit', edit_departure_path(@departure) %> |
+<%= link_to 'Back', departures_path %>

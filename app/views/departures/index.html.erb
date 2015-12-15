@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Departures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tour</th>
+      <th>Start time</th>
+      <th>Seats</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @departures.each do |departure| %>
+      <tr>
+        <td><%= departure.tour_id %></td>
+        <td><%= departure.start_time %></td>
+        <td><%= departure.seats %></td>
+        <td><%= departure.price %></td>
+        <td><%= link_to 'Show', departure %></td>
+        <td><%= link_to 'Edit', edit_departure_path(departure) %></td>
+        <td><%= link_to 'Destroy', departure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Departure', new_departure_path %>

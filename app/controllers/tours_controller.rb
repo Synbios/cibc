@@ -34,12 +34,18 @@ class ToursController < ApplicationController
   end
 
   def sample
-  	render layout: "shijiebang"
+    render layout: "shijiebang"
+  end
+
+  def huang
+    render layout: "shijiebang"
   end
 
   def calendar
     respond_to do |format|
-      format.js
+      format.js {
+        @departures = Departure.all
+      }
     end
   end
 
