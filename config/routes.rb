@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   match '/huang', to: 'tours#huang', via: 'get'
 
+  match '/round', to: 'tours#round', via: 'get'
+
   match '/tour/calendar', to: 'tours#calendar', via: 'get' 
   
 

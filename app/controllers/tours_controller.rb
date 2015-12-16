@@ -41,6 +41,10 @@ class ToursController < ApplicationController
     render layout: "shijiebang"
   end
 
+  def round
+    render layout: "shijiebang"
+  end
+
   def calendar
     respond_to do |format|
       format.js {

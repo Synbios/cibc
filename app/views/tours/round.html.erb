@@ -1,0 +1,75 @@
+<div class="grand_map">
+  <%= image_tag "/img/huang/map_all.jpg", id:"grand_map", style: "width: 100%" %>
+</div>
+
+<style>
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.controller {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 70px;
+  background-color: #fafafa;
+
+  text-align: center;
+  padding-top: 10px;
+
+  border: 1px solid #eee;
+
+  -webkit-box-shadow: 0px -10px 6px #bbb;
+  -moz-box-shadow:    0px -10px 6px #bbb;
+  box-shadow:         0px -10px 6px #bbb;
+}
+
+.controller a {
+  width: 45%;
+  height: 50px;
+  font-size: 31px;
+  padding: 15px 25px;
+}
+</style>
+
+
+<footer class="controller">
+  <a class="btn-u btn-u-lg">环线地图</a>
+  <a class="btn-u btn-u-lg btn-u-blue">线路详情</a>
+</footer>
+
+<% content_for :modals do %>
+<div id="map" class="modal fade modal_itinery">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-center">日本 · 中国环线</h4>
+      </div>
+      <div class="modal-body itinery_modal_body">
+        <%= image_tag "/img/huang/map_zg.jpg", style: "width:100%" %>
+        <div class="headline"><h4>行程概述</h4></div>
+        <p>双流国际机场集合，搭乘国际航班飞往东京，抵达后前往入住酒店休息。</p>
+        <p><span class="text-highlights text-highlights-blue">参考航班：CA459  （15:30-21:00）</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<% content_for :script do %>
+<script>
+
+  $(document).ready(function() {
+ 
+    $('#grand_map').on('click', function(event){
+      $('#map').modal('show');
+    });
+ 
+  });
+</script>
+<% end %>
