@@ -1,5 +1,11 @@
-<div class="grand_map">
-  <%= image_tag "/img/huang/map_all.jpg", id:"grand_map", style: "width: 100%" %>
+<div class="map_header">
+  <p>环游日本</p>
+</div>
+
+<div id="grand_map_container">
+
+  <%= image_tag "/img/huang/map_all.jpg", id:"grand_map" %>
+
 </div>
 
 <style>
@@ -11,36 +17,95 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+
+.map_header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  background-color: #157DEC;  
+}
+#grand_map_container{
+  position: absolute;
+  width: 100%;
+  top: 60px;
+  bottom:60px;
+
+}
+
+#grand_map {
+  width: 100%;
+  padding-top: 100px;
+}
+
+.map_header p {
+  color: #fff;
+  font-size: 20px;
+  line-height: 60px;
+}
+
 .controller {
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 70px;
-  background-color: #fafafa;
+  height: 60px;
+  background-color: #fff;
 
   text-align: center;
-  padding-top: 10px;
+  padding-top: 20px;
 
   border: 1px solid #eee;
 
-  -webkit-box-shadow: 0px -10px 6px #bbb;
-  -moz-box-shadow:    0px -10px 6px #bbb;
-  box-shadow:         0px -10px 6px #bbb;
+  -webkit-box-shadow: 0px -10px 8px #ddd;
+  -moz-box-shadow:    0px -10px 8px #ddd;
+  box-shadow:         0px -10px 8px #ddd;
 }
 
-.controller a {
-  width: 45%;
-  height: 50px;
-  font-size: 31px;
-  padding: 15px 25px;
+.controller div {
+  width: 32%;
+  font-size: 18px;
+  padding: 15px 5px;
 }
+
+.controller ul {
+  padding: 0;
+  list-style-type:none;
+  height:30px;
+  text-align:center;
+  width: 100%;      /* new */
+  display: table;   
+}
+.controller ul li {
+  margin-left:50px;
+  display: table-cell;  /* updated */
+}
+
+.controller ul a {
+  font-size: 18px;
+}
+
+.controller ul a:hover,
+.controller ul a:focus,
+.controller ul a:visited
+ {
+  text-decoration: none;
+  background-color: inherit;
+}
+.controller ul a.active {
+  color: #736AFF;
+}
+
 </style>
 
 
 <footer class="controller">
-  <a class="btn-u btn-u-lg">环线地图</a>
-  <a class="btn-u btn-u-lg btn-u-blue">线路详情</a>
+  <ul>
+    <li><a class="active"><i class="fa fa-location-arrow"></i> 线路地图</a></li>
+    <li><a class=""><i class="fa fa-flag-o"></i> 线路详情</a></li>
+    <li><a class=""><i class="fa fa-share-alt"></i> 选择落线</a></li>
+  </ul>
 </footer>
 
 <% content_for :modals do %>
