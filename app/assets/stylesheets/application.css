@@ -217,10 +217,20 @@ div.huang_features
   margin-bottom: 10px;
 }
 
+.huang_price ul.nav-tabs {
+  background-color: #eee;
+  padding-top: 5px;
+}
 
-.huang_price li a {
+.huang_price ul.nav-tabs li {
+
+}
+.huang_price ul.nav-tabs li:first-of-type{
+  margin-left:60px;
+}
+.huang_price ul.nav-tabs li a {
   font-size: 16px;
-  padding: 10px 20px 10px 20px;
+  padding: 10px;
 }
 .huang_price.tab-v1 .tab-content{
   padding-top: 0;
@@ -237,10 +247,15 @@ div.huang_features
   font-size: 30px
 }
 
+.huang_price .tab-pane ul {
+  padding-left: 20px;
+}
 .huang_price .tab-pane li {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+
 .huang_accordion{
   margin-bottom: 0;
 }
@@ -386,15 +401,25 @@ a.accordion-toggle {
 
 #itinery_slider .item{
   margin: 3px;
+  position: relative;
 }
 #itinery_slider .item img{
   display: block;
   width: 100%;
   height: auto;
 }
+#itinery_slider .item h4{
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  width: 100%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
   
 .itinery_modal_body {
-    height: calc(100vh - 210px);
+    height: calc(100vh - 155px);
     overflow-y: auto;
 }
 
