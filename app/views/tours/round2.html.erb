@@ -1,0 +1,547 @@
+<% content_for :stylesheets do %>
+  <link rel="stylesheet" href="http://openlayers.org/en/v3.12.1/css/ol.css" type="text/css">
+  <script src="http://openlayers.org/en/v3.12.1/build/ol.js" type="text/javascript"></script>
+<% end %>
+<div class="map_header">
+  <p>环游日本</p>
+</div>
+<div id="main_content">
+  <div role="tabpanel" class="" id="grand_map_container">
+    <%#= image_tag "/img/huang/map_all.jpg", id:"grand_map" %>
+  </div>
+  <div role="tabpanel" class="hidden" id="details_container">
+    <div id="trip_list" class="owl-carousel">
+      <div class="item">
+        <a href="#trip-1" data-toggle="tab" aria-expanded="false">
+          <%= image_tag "/img/db1.jpg" %>
+          <h4>本州线</h4>
+        </a>
+      </div>
+      <div class="item">
+        <a href="#trip-2" data-toggle="tab" aria-expanded="false">
+          <%= image_tag "/img/do.jpg" %>
+          <h4>九州线</h4>
+        </a>
+      </div>
+      <div class="item">
+        <a href="#trip-3" data-toggle="tab" aria-expanded="false">
+          <%= image_tag "/img/crim1.jpg" %>
+          <h4>四国线</h4>
+        </a>
+      </div>
+      <div class="item">
+        <a href="#trip-4" data-toggle="tab" aria-expanded="false">
+          <%= image_tag "/img/r1.jpg" %>
+          <h4>中国线</h4>
+        </a>
+      </div>
+      <div class="item">
+        <a href="#trip-5" data-toggle="tab" aria-expanded="false">
+          <%= image_tag "/img/r1.jpg" %>
+          <h4>关东线</h4>
+        </a>
+      </div>
+      <div class="item">
+        <a href="#trip-6" data-toggle="tab" aria-expanded="false">
+          <%= image_tag "/img/r1.jpg" %>
+          <h4>北海道-南</h4>
+        </a>
+      </div>
+      <div class="item">
+        <a href="#trip-7" data-toggle="tab" aria-expanded="false">
+          <%= image_tag "/img/r1.jpg" %>
+          <h4>北海道-东</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class="tab-content">
+      <div class="container tab-pane fade in active" id="trip-1">
+        <div class="headline"><h4>本州全景环线</h4></div>
+        <div class="margin-bottom-20">
+          <table class="table trip_table">
+            <thead>
+              <tr>
+                <td class="week">周一</td>
+                <td class="infomation">东京</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="week">周二</td>
+                <td class="infomation">横滨-镰仓</td>
+              </tr>
+              <tr>
+                <td class="week">周三</td>
+                <td class="infomation">伊豆-静冈-名古屋</td>
+              </tr>
+              <tr>
+                <td class="week">周四</td>
+                <td class="infomation">奈良-大阪</td>
+              </tr>
+              <tr>
+                <td class="week">周五</td>
+                <td class="infomation">京都</td>
+              </tr>
+              <tr>
+                <td class="week">周六</td>
+                <td class="infomation">高山-白川乡-上高地</td>
+              </tr>
+              <tr>
+                <td class="week">周日</td>
+                <td class="infomation">富士山-东京</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <%= render partial: "tours/info" %>
+      </div>
+      <div class="container tab-pane fade" id="trip-2">
+        <div class="headline"><h4>九州环线</h4></div>
+        <div class="margin-bottom-20">
+          <table class="table trip_table">
+            <thead>
+              <tr>
+                <td class="week">周一</td>
+                <td class="infomation">福冈-长崎</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="week">周二</td>
+                <td class="infomation">熊本-阿苏</td>
+              </tr>
+              <tr>
+                <td class="week">周三</td>
+                <td class="infomation">鹿儿岛</td>
+              </tr>
+              <tr>
+                <td class="week">周四</td>
+                <td class="infomation">雾岛-宫崎</td>
+              </tr>
+              <tr>
+                <td class="week">周五</td>
+                <td class="infomation">别府-福冈</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <%= render partial: "tours/info" %>
+      </div>
+      <div class="container tab-pane fade" id="trip-3">
+        <div class="headline"><h4>四国环线</h4></div>
+        <div class="margin-bottom-20">
+          <table class="table trip_table">
+            <thead>
+              <tr>
+                <td class="week">周一</td>
+                <td class="infomation">神户</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="week">周二</td>
+                <td class="infomation">鸣门海峡-香川</td>
+              </tr>
+              <tr>
+                <td class="week">周三</td>
+                <td class="infomation">爱媛</td>
+              </tr>
+              <tr>
+                <td class="week">周四</td>
+                <td class="infomation">高知</td>
+              </tr>
+              <tr>
+                <td class="week">周五</td>
+                <td class="infomation">德岛-大阪</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <%= render partial: "tours/info" %>
+      </div>
+      <div class="container tab-pane fade" id="trip-4">
+        <div class="headline"><h4>中国环线</h4></div>
+        <div class="margin-bottom-20">
+          <table class="table trip_table">
+            <thead>
+              <tr>
+                <td class="week">周一</td>
+                <td class="infomation">大阪-神户</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="week">周二</td>
+                <td class="infomation">冈山</td>
+              </tr>
+              <tr>
+                <td class="week">周三</td>
+                <td class="infomation">广岛</td>
+              </tr>
+              <tr>
+                <td class="week">周四</td>
+                <td class="infomation">鸟取</td>
+              </tr>
+              <tr>
+                <td class="week">周五</td>
+                <td class="infomation">京都</td>
+              </tr>
+              <tr>
+                <td class="week">周六</td>
+                <td class="infomation">奈良-大阪</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <%= render partial: "tours/info" %>
+      </div>
+      <div class="container tab-pane fade" id="trip-5">
+        <div class="headline"><h4>关东环线</h4></div>
+        <div class="margin-bottom-20">
+          <table class="table trip_table">
+            <thead>
+              <tr>
+                <td class="week">周一</td>
+                <td class="infomation">东京</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="week">周二</td>
+                <td class="infomation">千叶</td>
+              </tr>
+              <tr>
+                <td class="week">周三</td>
+                <td class="infomation">茨城</td>
+              </tr>
+              <tr>
+                <td class="week">周四</td>
+                <td class="infomation">枥木</td>
+              </tr>
+              <tr>
+                <td class="week">周五</td>
+                <td class="infomation">群马</td>
+              </tr>
+              <tr>
+                <td class="week">周六</td>
+                <td class="infomation">埼玉</td>
+              </tr>
+              <tr>
+                <td class="week">周日</td>
+                <td class="infomation">富士山-东京</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <%= render partial: "tours/info" %>
+      </div>
+      <div class="container tab-pane fade" id="trip-6">
+        <div class="headline"><h4>北海道南环线</h4></div>
+        <div class="margin-bottom-20">
+          <table class="table trip_table">
+            <thead>
+              <tr>
+                <td class="week">周一</td>
+                <td class="infomation">新千岁-支芴湖-登别</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="week">周二</td>
+                <td class="infomation">函馆</td>
+              </tr>
+              <tr>
+                <td class="week">周三</td>
+                <td class="infomation">大沼-洞爷湖</td>
+              </tr>
+              <tr>
+                <td class="week">周四</td>
+                <td class="infomation">小樽</td>
+              </tr>
+              <tr>
+                <td class="week">周五</td>
+                <td class="infomation">札幌-新千岁</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <%= render partial: "tours/info" %>
+      </div>
+      <div class="container tab-pane fade" id="trip-7">
+        <div class="headline"><h4>北海道东环线</h4></div>
+        <div class="margin-bottom-20">
+          <table class="table trip_table">
+            <thead>
+              <tr>
+                <td class="week">周一</td>
+                <td class="infomation">新千岁</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="week">周二</td>
+                <td class="infomation">十胜川</td>
+              </tr>
+              <tr>
+                <td class="week">周三</td>
+                <td class="infomation">阿寒湖</td>
+              </tr>
+              <tr>
+                <td class="week">周四</td>
+                <td class="infomation">网走-层云峡</td>
+              </tr>
+              <tr>
+                <td class="week">周五</td>
+                <td class="infomation">美瑛-富良野</td>
+              </tr>
+              <tr>
+                <td class="week">周六</td>
+                <td class="infomation">札幌</td>
+              </tr>
+              <tr>
+                <td class="week">周日</td>
+                <td class="infomation">小樽-新千岁</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <%= render partial: "tours/info" %>
+      </div>
+    </div>
+  </div>
+  <div role="tabpanel" class="hidden" id="highlights_container">
+    <%= image_tag "/img/huang/full.jpg", style: "width: 100%" %>
+  </div>
+</div>
+
+<style>
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.map_header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  background-color: #157DEC;  
+}
+#main_content{
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  bottom:60px;
+  overflow: scroll;
+}
+
+#grand_map {
+  width: 100%;
+  padding-top: 100px;
+}
+
+.map_header p {
+  color: #fff;
+  font-size: 20px;
+  line-height: 50px;
+}
+
+#grand_map_container{
+  width: 100%;
+  height: 600px;
+}
+
+.controller {
+  z-index: 10;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  margin-left: 0px;
+  left: 0px;
+
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color: #fff;
+
+  text-align: center;
+  padding-top: 15px;
+
+  border: 1px solid #eee;
+
+  -webkit-box-shadow: 0px -10px 8px #ddd;
+  -moz-box-shadow:    0px -10px 8px #ddd;
+  box-shadow:         0px -10px 8px #ddd;
+}
+
+.controller div {
+  width: 32%;
+  font-size: 18px;
+  padding: 15px 5px;
+}
+
+.controller ul {
+  padding: 0;
+  list-style-type:none;
+  height:30px;
+  text-align:center;
+  width: 100%;      /* new */
+  display: table;   
+}
+.controller ul li {
+  margin-left:50px;
+  display: table-cell;  /* updated */
+}
+
+.controller ul a {
+  font-size: 18px;
+}
+
+.controller ul a:hover,
+.controller ul a:focus,
+.controller ul a:visited
+{
+  text-decoration: none;
+  background-color: inherit;
+}
+.controller ul a.active {
+  color: #736AFF;
+}
+
+#trip_list .item{
+  background: inherit;
+  padding: 5px 0px;
+  margin: 5px 4px;
+  color: #FFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+}
+#trip_list .item img{
+  width: 100%;
+}
+
+table .week {
+  width: 70px;
+  color: orange;
+  font-weight: bold;
+}
+table .infomation {
+  text-align: left;
+}
+.modal-footer button{
+  width: 100% !important;
+}
+</style>
+
+
+<footer class="controller">
+  <ul>
+    <li><a href="#" id="a_show_map" class="active" onclick="click_show_map()"><i class="fa fa-location-arrow"></i> 线路地图</a></li>
+    <li><a href="#" id="a_show_highlights" class="" onclick="click_show_highlights()"><i class="fa fa-share-alt"></i> 环线介绍</a></li>
+    <li><a href="#" id="a_show_detail" class="" onclick="click_show_detail()"><i class="fa fa-flag-o"></i> 线路详情</a></li>
+  </ul>
+</footer>
+
+<% content_for :modals do %>
+<% end %>
+
+<% content_for :script do %>
+<script>
+function click_show_map(){
+  $('#a_show_map').addClass("active");
+  $('#a_show_detail').removeClass("active");
+  $('#a_show_highlights').removeClass("active");
+
+  $('#grand_map_container').removeClass("hidden");
+  $('#details_container').addClass("hidden");
+  $('#highlights_container').addClass("hidden");
+}
+function click_show_detail(){
+  $('#a_show_map').removeClass("active");
+  $('#a_show_detail').addClass("active");
+  $('#a_show_highlights').removeClass("active");
+
+  $('#grand_map_container').addClass("hidden");
+  $('#details_container').removeClass("hidden");
+  $('#highlights_container').addClass("hidden");
+}
+
+function click_show_highlights(){
+  $('#a_show_map').removeClass("active");
+  $('#a_show_detail').removeClass("active");
+  $('#a_show_highlights').addClass("active");
+
+  $('#grand_map_container').addClass("hidden");
+  $('#details_container').addClass("hidden");
+  $('#highlights_container').removeClass("hidden");
+}
+
+$(document).ready(function() {
+
+
+  $("#trip_list").owlCarousel({
+      items : 8, //10 items above 1000px browser width
+      itemsDesktop : [1000,7], //5 items between 1000px and 901px
+      itemsDesktopSmall : [900,6], // betweem 900px and 601px
+      itemsTablet: [600,4], //2 items between 600 and 0
+      itemsMobile : 4, // itemsMobile disabled - inherit from itemsTablet option
+      navigation: false,
+      pagination: false
+    });
+
+  $('#grand_map_container').height( $(window).height() - 110 );
+
+  var extent = [0, 0, 2864, 2308];
+  var projection = new ol.proj.Projection({
+    code: 'xkcd-image',
+    units: 'pixels',
+    extent: extent
+  });
+
+  var map = new ol.Map({
+    layers: [
+      new ol.layer.Image({
+        source: new ol.source.ImageStatic({
+          attributions: [
+            new ol.Attribution({
+              html: '&copy; <a href="http://xkcd.com/license.html">xkcd</a>'
+            })
+          ],
+          url: '/img/huang/round.jpg',
+          projection: projection,
+          imageExtent: extent
+        })
+      })
+    ],
+    target: 'grand_map_container',
+    view: new ol.View({
+      projection: projection,
+      center: ol.extent.getCenter(extent),
+      zoom: 1,
+      maxZoom: 3,
+      minZoom: 1
+    })
+  });
+});
+
+
+
+</script>
+
+<% end %>

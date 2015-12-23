@@ -643,9 +643,6 @@ function click_show_highlights(){
 
 $(document).ready(function() {
 
-  $('#grand_map').on('click', function(event){
-    $('#map').modal('show');
-  });
 
   $("#trip_list").owlCarousel({
       items : 8, //10 items above 1000px browser width
@@ -784,8 +781,7 @@ $(function () {
     }]
   },function (chart) { // on complete
 
-        chart.renderer.image('/img/huang/fuji.png', 20, 100, 180, 160)
-            .add();
+    //chart.renderer.image('/img/huang/fuji.png', 20, 90, 170, 150).add();
 
     }
   );

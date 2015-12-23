@@ -42,7 +42,7 @@ class ToursController < ApplicationController
   end
 
   def round
-    render layout: "shijiebang"
+    render "round2", layout: "shijiebang"
   end
 
   def calendar
