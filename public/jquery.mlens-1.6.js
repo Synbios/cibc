@@ -297,7 +297,7 @@
 				$imageTag = data.imageTag,
 				offset = $image.offset(),
         		leftPos = parseInt(e.pageX - offset.left),
-        		topPos = parseInt(e.pageY - offset.top) - 60,
+        		topPos = parseInt(e.pageY - offset.top) - 100,
 				widthRatio = $imageTag.width() / $image.width(),
 				heightRatio = $imageTag.height() / $image.height();
 				
@@ -305,12 +305,12 @@
 	        if(leftPos > 0 && topPos > 0 && leftPos < $image.width() && topPos < $image.height()) {	
 				// calculating hi-res image position as target lens background
 	            leftPos = String(-((e.pageX - offset.left) * widthRatio  - $target.width() / 2));
-	            topPos = String(-((e.pageY - offset.top) * heightRatio - $target.height() / 2)) -60;
+	            topPos = String(-((e.pageY - offset.top) * heightRatio - $target.height() / 2)) - 100;
 	            $target.css({"backgroundPosition": leftPos + "px " + topPos + "px"});
 				
 				// calculating target lens position inside the image
 	            leftPos = String(e.pageX - offset.left - $target.width() / 2);
-	            topPos = String(e.pageY - offset.top - $target.height() / 2) -60;
+	            topPos = String(e.pageY - offset.top - $target.height() / 2) - 100;
 	            $target.css({"left": leftPos + "px", "top": topPos + "px"});
 	        }
 			
