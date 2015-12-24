@@ -1,13 +1,16 @@
 <% content_for :stylesheets do %>
-  <link rel="stylesheet" href="http://openlayers.org/en/v3.12.1/css/ol.css" type="text/css">
-  <script src="http://openlayers.org/en/v3.12.1/build/ol.js" type="text/javascript"></script>
+
+  
 <% end %>
 <div class="map_header">
   <p>环游日本</p>
 </div>
 <div id="main_content">
-  <div role="tabpanel" class="" id="grand_map_container">
+  <div role="tabpanel" class="zoom" id="grand_map_container">
     <%#= image_tag "/img/huang/map_all.jpg", id:"grand_map" %>
+    <div class="base-image" id="base-image">
+      <div id="zoom"></div>
+    </div>
   </div>
   <div role="tabpanel" class="hidden" id="details_container">
     <div id="trip_list" class="owl-carousel">
@@ -447,6 +450,41 @@ table .infomation {
 .modal-footer button{
   width: 100% !important;
 }
+
+
+#base-image {
+  width: 100%;
+  height: 100%;
+  background: url('/img/huang/round.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+#zoom {
+  background: url('/img/huang/round-base.jpg');
+  display: none;
+  position: fixed;
+  height: 100px;
+  width: 100px;
+  background-repeat: no-repeat;
+  /* Not sure how to deal with bottom edge, but no-repeat prevents weird repeating */
+  background-position-y: 0%;
+  background-position-x: 0%;
+  z-index: 2;
+  -webkit-transform: scale(2, 2);
+  -moz-transform: scale(2, 2);
+  -ms-transform: scale(2, 2);
+  -o-transform: scale(2, 2);
+  transform: scale(2, 2);
+  -webkit-background-size: 960px 540px;
+  -moz-background-size: 960px 540px;
+  -o-background-size: 960px 540px;
+  background-size: 960px 540px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+}
 </style>
 
 
@@ -462,7 +500,10 @@ table .infomation {
 <% end %>
 
 <% content_for :script do %>
+<script src="/zoom.js" type="text/javascript"></script>
+
 <script>
+
 function click_show_map(){
   $('#a_show_map').addClass("active");
   $('#a_show_detail').removeClass("active");
@@ -507,37 +548,15 @@ $(document).ready(function() {
 
   $('#grand_map_container').height( $(window).height() - 110 );
 
-  var extent = [0, 0, 2864, 2308];
-  var projection = new ol.proj.Projection({
-    code: 'xkcd-image',
-    units: 'pixels',
-    extent: extent
-  });
+  
+  var zoomSize = 100;// Zoom Radius (Offset calculation. Standard size is at 100px circle)
+var touchOffset = 70;// Manual Offset so that zoom window isn't on thumb
+var pageYOffset = zoomSize/2;
+var pageXOffset = zoomSize/2;
 
-  var map = new ol.Map({
-    layers: [
-      new ol.layer.Image({
-        source: new ol.source.ImageStatic({
-          attributions: [
-            new ol.Attribution({
-              html: '&copy; <a href="http://xkcd.com/license.html">xkcd</a>'
-            })
-          ],
-          url: '/img/huang/round.jpg',
-          projection: projection,
-          imageExtent: extent
-        })
-      })
-    ],
-    target: 'grand_map_container',
-    view: new ol.View({
-      projection: projection,
-      center: ol.extent.getCenter(extent),
-      zoom: 1,
-      maxZoom: 3,
-      minZoom: 1
-    })
-  });
+var pageYOffsetMobile = zoomSize/2;
+var pageXOffsetMobile = zoomSize/2;
+    
 });
 
 
