@@ -470,7 +470,7 @@ table .infomation {
 <% end %>
 
 <% content_for :script do %>
-<script src="/jquery.mlens-1.6.min.js" type="text/javascript"></script>
+<script src="/jquery.mlens-1.6.js" type="text/javascript"></script>
 
 <script>
 
@@ -528,7 +528,7 @@ $(document).ready(function() {
     lensSize: ["150px","150px"],            // lens dimensions (in px or in % with respect to image dimensions)
                                         // can be different for X and Y dimension
     borderSize: 4,                  // size of the lens border (in px)
-    borderColor: "#fff",            // color of the lens border (#hex)
+    borderColor: "#ddd",            // color of the lens border (#hex)
     borderRadius: 0,                // border radius (optional, only if the shape is square)
     imgOverlay: $("#green_monster").attr("data-overlay"), // path of the overlay image (optional)
     overlayAdapt: true,    // true if the overlay image has to adapt to the lens size (boolean)
