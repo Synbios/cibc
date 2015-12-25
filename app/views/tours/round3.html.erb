@@ -10,7 +10,7 @@
 
     <div class="parent">
       <div class="panzoom">
-        <img src="/img/huang/round.jpg" width="100%" style="margin: 50px auto">
+        <img src="/img/huang/round.jpg" width="100%" style="margin: 50px auto;display: none">
       </div>
     </div>
     <div class="buttons" style="position:absolute;left: 0; ">
@@ -535,10 +535,13 @@ $(document).ready(function() {
             $zoomOut: $(".zoom-out"),
             $zoomRange: $(".zoom-range"),
             $reset: $(".reset"),
-            increment: 0.5,
+            increment: 1,
             transition: true,
+            contain: 'invert',
+            minScale: 1,
+            maxScale: 4
           });
-        })();
+        })().panzoom("transition", true);;
     
 });
 
