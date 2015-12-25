@@ -1,5 +1,5 @@
 <% content_for :stylesheets do %>
-
+  <link rel="stylesheet" href="/easyzoom.css">
   
 <% end %>
 <div class="map_header">
@@ -8,18 +8,13 @@
 <div id="main_content">
   <div role="tabpanel" class="zoom" id="grand_map_container">
 
-    <div class="parent">
-      <div class="panzoom">
-        <img src="/img/huang/round.jpg" width="100%" style="margin: 50px auto;">
-      </div>
+<div style="display: table-cell; vertical-align: middle;">
+    <div class="easyzoom easyzoom--overlay" id="zoom_container">
+      <a href="/img/huang/round.jpg">
+        <img src="/img/huang/round.jpg" width="100%" id="zoom_image" alt="" />
+      </a>
     </div>
-    <div class="buttons" style="position:absolute;left: 0; display: none">
-        <button class="zoom-in">Zoom In</button>
-        <button class="zoom-out">Zoom Out</button>
-        <input type="range" class="zoom-range">
-        <button class="reset">Reset</button>
-    </div>
-
+</div>
 
   </div>
   <div role="tabpanel" class="hidden" id="details_container">
@@ -353,7 +348,7 @@ body {
   width: 100%;
   height: 40px;
   text-align: center;
-  background-color: #157DEC;  
+  background-color: #8dcfce;  
 }
 #main_content{
   position: absolute;
@@ -375,9 +370,9 @@ body {
 }
 
 #grand_map_container{
+  display: block;
   width: 100%;
-  display: inline-flex;
-  height: 100%;
+  display: table; height: 200px; position: relative; overflow: hidden;
 }
 
 #grand_map_container .parent {
@@ -436,7 +431,7 @@ body {
   background-color: inherit;
 }
 .controller ul a.active {
-  color: #736AFF;
+  color: #8dcfce;
 }
 
 #trip_list .item{
@@ -482,7 +477,7 @@ table .infomation {
 <% end %>
 
 <% content_for :script do %>
-<script src="/jquery.panzoom.min.js" ></script>
+<script src="/easyzoom.js" ></script>
 <script>
 
 function click_show_map(){
@@ -527,21 +522,11 @@ $(document).ready(function() {
       pagination: true
     });
 
-  $('#grand_map_container').height( $(window).height() - 110 );
+  var grand_map_container_height = $(window).height() - 110;
+  $('#grand_map_container').height( grand_map_container_height );
+  //$('#zoom_container').css("margin", (grand_map_container_height - $('#zoom_image').height())/2+"px auto" );
 
-  (function() {
-          $('.panzoom').panzoom({
-            $zoomIn: $(".zoom-in"),
-            $zoomOut: $(".zoom-out"),
-            $zoomRange: $(".zoom-range"),
-            $reset: $(".reset"),
-            increment: 1,
-            transition: true,
-            contain: 'invert',
-            minScale: 1,
-            maxScale: 4
-          });
-        })().panzoom("transition", true);;
+  var $easyzoom = $('.easyzoom').easyZoom();
     
 });
 
