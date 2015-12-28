@@ -177,7 +177,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 3.2.0)
+  bootstrap-sass
   byebug
   capistrano
   capistrano-bundler
