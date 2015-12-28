@@ -13,7 +13,24 @@
  *= require_self
  */
 
+// Bootstrap and Global Compulsory
+@import "bootstrap";
+@import "style";
+
+// Header and Footer
+@import "headers/header-default";
+@import "footers/footer-v1.css";
+
+// Implementing Plugins
+@import "plugins/animate";
+@import "plugins/line-icons/line-icons";
+@import "font-awesome";
+@import "plugins/owl-carousel/owl-carousel/owl.carousel";
+@import "plugins/revolution-slider/rs-plugin/css/settings.css";
+
 // In Page CSS
+@import "plugins/fancybox/source/jquery.fancybox";
+@import "custom";
 
 .food-heading h4 {
   display: inline-block;

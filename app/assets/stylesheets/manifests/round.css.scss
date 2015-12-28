@@ -13,6 +13,14 @@
  *= require_self
  */
 
+// Bootstrap and Global Compulsory
+@import "bootstrap";
+@import "style";
+@import "font-awesome";
+
+// Implementing Plugins
+@import "plugins/owl-carousel/owl-carousel/owl.carousel";
+
 // Pages Style
 @import "easyzoom";
 

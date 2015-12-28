@@ -27,8 +27,8 @@ module Cibc
     config.i18n.available_locales = [:en, :"zh-CN"]
     config.i18n.default_locale = :en
 
-    config.assets.precompile +=  ['ie8.css', 'app.css', 'blocks.css', 'plugins.css', 'style-switcher/style-switcher.css','plugins/*', 'fonts/*', 'stylesheets/*', 'javascripts/*']
+    #config.assets.precompile +=  ['easyzoom.css']
 
-    config.assets.paths << Rails.root.join("vendor", "assets")
+    #config.assets.paths << Rails.root.join("vendor", "assets")
   end
 end

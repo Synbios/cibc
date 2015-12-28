@@ -19,6 +19,10 @@
   <!-- Local Fonts -->
   
   <!-- Manifest -->
+  <%= stylesheet_link_tag '/unify/assets/plugins/bootstrap/css/bootstrap.min.css', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag '/unify/assets/plugins/font-awesome/css/font-awesome.min.css', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag '/unify/assets/css/style.css', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag '/unify/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'round', media: 'all', 'data-turbolinks-track' => true %>
 
   <!-- CSS Customization -->  
@@ -30,18 +34,24 @@
   </div>
   
   <%= yield :modals %>
+  <%= javascript_include_tag '/unify/assets/plugins/jquery/jquery.min.js', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag '/unify/assets/plugins/jquery/jquery-migrate.min.js', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag '/unify/assets/plugins/bootstrap/js/bootstrap.min.js', media: 'all', 'data-turbolinks-track' => true %>
 
+  <%= javascript_include_tag '/unify/assets/plugins/jquery/jquery-migrate.min.js', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag '/unify/assets/plugins/smoothScroll.js', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag '/unify/assets/plugins/owl-carousel/owl-carousel/owl.carousel.min.js', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'round', media: 'all', 'data-turbolinks-track' => true %>
   
   <!-- weixin -->
-  <!-- <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
+  <%#= javascript_include_tag 'http://res.wx.qq.com/open/js/jweixin-1.0.0.js' %>
 
   <%= yield :script %>
 
   <!--[if lt IE 9]>
-    <script src="assets/plugins/respond.js"></script>
-    <script src="assets/plugins/html5shiv.js"></script>
-    <script src="assets/plugins/placeholder-IE-fixes.js"></script>
+    <%= javascript_include_tag '/unify/assets/plugins/respond.js' %>
+    <%= javascript_include_tag '/unify/assets/plugins/html5shiv.js' %>
+    <%= javascript_include_tag '/unify/assets/plugins/placeholder-IE-fixes.js ' %>
   <![endif]-->
 </body>
 </html>
