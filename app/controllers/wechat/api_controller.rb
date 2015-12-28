@@ -18,7 +18,7 @@ class Wechat::ApiController < ApplicationController
     logger.info ">>> DEBUG >>> message type: POST #{params}"
     # default message contains empty string, which will be used to answer WeChat requests.
     # all requests must be answered within 5 seconds to prevent resending.
-    @message = "该回复尚未设定~全部功能请访问 <a href='http://23.92.27.216/wechat'>HeatList微官网</a>"
+    @message = "该回复尚未设定"
     respond_to do |format|
       format.xml {
         if params[:xml][:FromUserName].present?
