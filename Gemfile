@@ -30,6 +30,9 @@ gem "simple_calendar", "~> 2.0"
 
 gem 'rails-i18n', '~> 4.0.0'
 
+# XML parser for WeChat
+gem 'actionpack-xml_parser'
+# CSS
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
 
