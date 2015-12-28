@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215064303) do
+ActiveRecord::Schema.define(version: 20151228083146) do
 
   create_table "departures", force: :cascade do |t|
     t.integer  "tour_id",    limit: 4
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20151215064303) do
     t.integer  "price",      limit: 4
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+  end
+
+  create_table "tokens", force: :cascade do |t|
+    t.string   "type",       limit: 255
+    t.string   "key",        limit: 255
+    t.datetime "expires_at"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end

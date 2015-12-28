@@ -1,0 +1,2 @@
+class JsapiTicket < Token
+end
