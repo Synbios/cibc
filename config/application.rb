@@ -30,5 +30,8 @@ module Cibc
     #config.assets.precompile +=  ['easyzoom.css']
 
     #config.assets.paths << Rails.root.join("vendor", "assets")
+
+    # for XML parser
+    config.middleware.insert_after ActionDispatch::ParamsParser, ActionDispatch::XmlParamsParser
   end
 end
