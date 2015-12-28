@@ -27,6 +27,8 @@ module Cibc
     config.i18n.available_locales = [:en, :"zh-CN"]
     config.i18n.default_locale = :en
 
+    config.assets.precompile =  ['*.js', '*.css', '*.css.erb']
+
     config.assets.paths << Rails.root.join("vendor", "assets")
   end
 end
