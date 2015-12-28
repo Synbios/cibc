@@ -11,7 +11,36 @@
   });
 
   wx.ready(function(){
-    alert("ready");
+    wx.onMenuShareTimeline({
+      title: '盛唐遗风私汤东阪7日旅行', // 分享标题
+      link: 'http://baidu.com', // 分享链接
+      imgUrl: '<%= @domain_url + image_path("/img/huang/fuji.png") %>', // 分享图标
+      success: function () {
+        alert("share timeline success");
+        // 用户确认分享后执行的回调函数
+      },
+      cancel: function () {
+        alert("share timeline fail");
+        // 用户取消分享后执行的回调函数
+      }
+    });
+    
+    wx.onMenuShareAppMessage({
+      title: '盛唐遗风私汤东阪7日旅行', // 分享标题
+      desc: '这里写宣传标语', // 分享描述
+      link: 'http://baidu.com', // 分享链接
+      imgUrl: '<%= image_url("/img/huang/fuji.png") %>', // 分享图标
+      type: 'link', // 分享类型,music、video或link，不填默认为link
+      //dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+      success: function () { 
+        alert("share contact success");
+        // 用户确认分享后执行的回调函数
+      },
+      cancel: function () { 
+        alert("share contact success");
+        // 用户取消分享后执行的回调函数
+      }
+    });
   });
 
   wx.error(function(res){
@@ -434,7 +463,7 @@
 <div class="container">
   <div class="tag-box tag-box-v3 margin-bottom-20 telephone">
     <h2>产品: 浪漫日本本州6日</h2>
-    <a href="tel:5551234567" class="btn-u btn-u-orange" type="button">电话咨询</a>
+    <a href="tel:15282317143" class="btn-u btn-u-orange" type="button">电话咨询</a>
   </div>
 </div>
 
