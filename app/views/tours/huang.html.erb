@@ -13,7 +13,7 @@
   wx.ready(function(){
     wx.onMenuShareTimeline({
       title: '盛唐遗风私汤东阪7日旅行', // 分享标题
-      link: 'http://baidu.com', // 分享链接
+      link: 'http://www.jhtcd.com/wechat/tours/1', // 分享链接
       imgUrl: '<%= @domain_url + image_path("/img/huang/fuji.png") %>', // 分享图标
       success: function () {
         //alert("share timeline success");
@@ -28,7 +28,7 @@
     wx.onMenuShareAppMessage({
       title: '盛唐遗风私汤东阪7日旅行', // 分享标题
       desc: '这里写宣传标语', // 分享描述
-      link: 'http://baidu.com', // 分享链接
+      link: 'http://www.jhtcd.com/wechat/tours/1', // 分享链接
       imgUrl: '<%= image_url("/img/huang/fuji.png") %>', // 分享图标
       type: 'link', // 分享类型,music、video或link，不填默认为link
       //dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
