@@ -13,6 +13,6 @@
  *= require_self
  */
 
-// Bootstrap and Global Compulsory
+/* Bootstrap and Global Compulsory */
 @import "bootstrap";
 @import "font-awesome";
