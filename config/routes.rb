@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   namespace :wechat do
     resources :tours, only: [:index, :show]
+
+    get 'api', to: 'api#check'
+    post 'api', to: 'api#message'
   end
 
   
