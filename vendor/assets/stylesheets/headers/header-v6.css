@@ -1092,7 +1092,7 @@
 	background: rgba(0,0,0,0.5);
 }
 
-`/*Media Queries*/
+/*Media Queries*/
 @media (min-width: 992px) {
 	/*Header*/
 	.header-fixed .header-v6.header-dark-transparent.header-fixed-shrink {
