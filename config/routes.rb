@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :departures
+  namespace :wechat do
+    resources :tours, only: [:index, :show]
+  end
+
+  
 
   match '/japan', to: 'tours#show', via: 'get'
   match '/maoxian88', to: 'tours#maoxian88', via: 'get'

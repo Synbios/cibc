@@ -30,6 +30,10 @@ gem "simple_calendar", "~> 2.0"
 
 gem 'rails-i18n', '~> 4.0.0'
 
+gem 'bootstrap-sass'
+gem "font-awesome-rails"
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

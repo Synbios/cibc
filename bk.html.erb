@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <title><%= yield(:title) %></title>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Web Fonts -->
+  <!-- <link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Roboto+Slab:400,300,700'> -->
+
+  <!-- Local Fonts -->
+  
+  <!-- Manifest -->
+  <%= stylesheet_link_tag 'shijiebang', media: 'all', 'data-turbolinks-track' => true %> 
+
+  <!--[if lt IE 9]><link rel="stylesheet" href="unify/assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css" type="text/css" media="screen"><![endif]-->
+
+  <%= yield :stylesheets %>
+</head>
+<body>
+  
+  <div class="wrapper">
+    <%#= render "layouts/header" %>
+    <%= yield %>
+    <%#= render "layouts/footer" %>
+  </div>
+
+  <%= yield :modals %>
+
+  <%= javascript_include_tag 'shijiebang', media: 'all', 'data-turbolinks-track' => true %>
+
+  <!-- weixin -->
+  <!-- <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
+
+
+  <script>
+  jQuery(document).ready(function() {
+    App.init();
+    OwlCarousel.initOwlCarousel();
+    RevolutionSlider.initRSfullWidthD();
+    App.initParallaxBg();
+  });
+  </script>
+  <%= yield :script %>
+
+  <!--[if lt IE 9]>
+    <script src="assets/plugins/respond.js"></script>
+    <script src="assets/plugins/html5shiv.js"></script>
+    <script src="assets/plugins/placeholder-IE-fixes.js"></script>
+  <![endif]-->
+</body>
+</html>

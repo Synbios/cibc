@@ -1,0 +1,170 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ */
+
+// Bootstrap and Global Compulsory
+@import "bootstrap";
+@import "style";
+@import "font-awesome";
+
+// Implementing Plugins
+@import "plugins/owl-carousel/owl-carousel/owl.carousel";
+
+// Pages Style
+@import "easyzoom";
+
+
+// In Page CSS
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.map_header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  background-color: #8dcfce;
+
+  p {
+    color: #fff;
+    font-size: 20px;
+    line-height: 40px;
+  }
+}
+
+#main_content{
+  position: absolute;
+  width: 100%;
+  top: 40px;
+  bottom:50px;
+  overflow: scroll;
+}
+
+
+#grand_map_container{
+  display: block;
+  width: 100%;
+  display: table; height: 200px; position: relative; overflow: hidden;
+
+  #zoom_wrapper {
+    display: table-cell; 
+    vertical-align: middle;
+
+    #zoom_image {
+      width: 100%;
+    }
+  }
+}
+
+#highlights_container {
+  img {
+    width: 100%;
+  }
+}
+
+.controller {
+  z-index: 10;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  margin-left: 0px;
+  left: 0px;
+
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  background-color: #fff;
+
+  text-align: center;
+  padding-top: 5px;
+
+  border: 1px solid #eee;
+
+  -webkit-box-shadow: 0px -6px 6px #ddd;
+  -moz-box-shadow:    0px -6px 6px #ddd;
+  box-shadow:         0px -16x 6px #ddd;
+
+
+  div {
+    width: 32%;
+    font-size: 18px;
+    padding: 15px 5px;
+  }
+
+  ul {
+    padding: 0;
+    list-style-type:none;
+    height:30px;
+    text-align:center;
+    width: 100%;      /* new */
+    display: table; 
+
+    li {
+      margin-left:50px;
+      display: table-cell;  /* updated */
+    }
+
+    a {
+      font-size: 18px;
+    }
+
+    a:hover, 
+    a:focus,
+    a:visited {
+      text-decoration: none;
+      background-color: inherit;
+    }
+
+    a.active {
+      color: #8dcfce;
+    }
+
+  }
+}
+
+#trip_list .item {
+  background: inherit;
+  padding: 5px 0px;
+  margin: 5px 4px;
+  color: #FFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+
+  img {
+    width: 100%;
+  }
+}
+
+
+table {
+  .week {
+    width: 70px;
+    color: orange;
+    font-weight: bold;
+  }
+
+  .infomation {
+    text-align: left;
+  }
+}
