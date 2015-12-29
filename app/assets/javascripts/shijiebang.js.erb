@@ -17,4 +17,22 @@ jQuery(document).ready(function() {
   OwlCarousel.initOwlCarousel();
   RevolutionSlider.initRSfullWidthD();
   App.initParallaxBg();
+
+
+  $(".fw-slider").owlCarousel({
+      navigation: false, // Show next and prev buttons
+      slideSpeed: 300,
+      pagination: true,
+      paginationSpeed: 400,
+      singleItem: true,
+      lazyLoad: true
+ 
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+ 
+  });
 });

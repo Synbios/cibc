@@ -2,6 +2,7 @@ class Wechat::ToursController < ApplicationController
   include Wechat::MasterHelper
 
   def index
+    render layout: "shijiebang"
   end
 
   def show

@@ -2,6 +2,10 @@ class ToursController < ApplicationController
   before_action :set_locale
   #protect_from_forgery except: :calendar
 
+  def index
+    render layout: "shijiebang"
+  end
+
   def show
   	render layout: "unify"
   end
