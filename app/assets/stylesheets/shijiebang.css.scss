@@ -15,6 +15,11 @@
 
 // In Page CSS
 
+.sys-masthead-logo {
+  img {
+    height: 30px;
+  }
+}
 .food-heading h4 {
   display: inline-block;
   padding: 0 15px;
@@ -420,6 +425,12 @@ a.accordion-toggle {
 }
 
 /* index.html */
+.feature_table .item {
+  img {
+    width: 48px;
+    height: 48px;
+  }
+}
 .grey_bg {
   background-color: #eee;
 }
