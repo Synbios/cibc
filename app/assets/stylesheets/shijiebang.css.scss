@@ -17,7 +17,7 @@
 
 .sys-masthead-logo {
   img {
-    height: 30px;
+    height: 25px;
   }
 }
 .food-heading h4 {
@@ -425,6 +425,7 @@ a.accordion-toggle {
 }
 
 /* index.html */
+.feature_table { table-layout: fixed; }
 .feature_table .item {
   img {
     width: 48px;
