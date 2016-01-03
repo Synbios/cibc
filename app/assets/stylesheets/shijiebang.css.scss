@@ -15,11 +15,6 @@
 
 // In Page CSS
 
-.sys-masthead-logo {
-  img {
-    height: 25px;
-  }
-}
 .food-heading h4 {
   display: inline-block;
   padding: 0 15px;
@@ -120,9 +115,14 @@
     padding: .65rem;
     border-bottom: 1px solid #bbb;
     zoom: 1;
+
+    .sys-masthead-logo {
+      img {
+        height: 25px;
+      }
+    }
 }
-.sys-masthead-logo {
-}
+
 
 .mod-top-head {
   position: relative;

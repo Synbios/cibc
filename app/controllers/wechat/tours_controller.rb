@@ -6,8 +6,8 @@ class Wechat::ToursController < ApplicationController
   end
 
   def show
-    @domain_url = "www.jhtcd.com"
+    @domain_url = "www.jhtwork.com"
     @wx_signature = wechat_generate_jsapi_signature request.url
-    render "tours/huang", layout: "shijiebang"
+    render "#{params[:id]}", layout: "shijiebang"
   end
 end
