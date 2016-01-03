@@ -63,9 +63,9 @@
     <ul>
       <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="mainSlide">
         <!-- MAIN IMAGE -->
-        <img src="/img/japan/s1.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+        <img src="/img/huang/t1-s-1.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 
-        <div class="tp-caption revolution-ch1_c sft start"
+<!--         <div class="tp-caption revolution-ch1_c sft start"
         data-x="center"
         data-hoffset="0"
         data-y="230"
@@ -75,25 +75,25 @@
         data-endeasing="Power1.easeIn"
         data-endspeed="300">
         乐享本州游1月2月伊豆早樱季
-      </div>
+        </div> -->
 
-      <!-- LAYER -->
-      <div class="tp-caption revolution-ch2_c sft"
-      data-x="center"
-      data-hoffset="0"
-      data-y="350"
-      data-speed="1400"
-      data-start="2000"
-      data-easing="Power4.easeOut"
-      data-endspeed="300"
-      data-endeasing="Power1.easeIn"
-      data-captionhidden="off"
-      style="z-index: 6">
-      双古都 / 三和食 / 四遗产 <br/>
-      熊野名泉 私汤!
-    </div>
+        <!-- LAYER -->
+<!--         <div class="tp-caption revolution-ch2_c sft"
+        data-x="center"
+        data-hoffset="0"
+        data-y="350"
+        data-speed="1400"
+        data-start="2000"
+        data-easing="Power4.easeOut"
+        data-endspeed="300"
+        data-endeasing="Power1.easeIn"
+        data-captionhidden="off"
+        style="z-index: 6">
+        双古都 / 三和食 / 四遗产 <br/>
+        熊野名泉 私汤!
+        </div> -->
 
-    <!-- LAYER -->
+        <!-- LAYER -->
         <!-- <div class="tp-caption sft"
         data-x="center"
         data-hoffset="0"
@@ -114,7 +114,7 @@
   </div>
 </div>
 <div style="width: 100%">
-  <%= image_tag "huang/sample.gif", style: "width: 100%; margin: 10px 0 20px 0" %>
+  <%= image_tag "/img/huang/t1-ad-1.jpg", style: "width: 100%; margin: 10px 0 20px 0" %>
 </div>
 <div class="no-padding">
   <div class="container">
@@ -204,10 +204,6 @@
     <div class="item" id="slide_day_6">
       <%= image_tag "huang/tour/6.jpg" %>
       <h4>第6天</h4>
-    </div>
-    <div class="item" id="slide_day_7">
-      <%= image_tag "huang/tour/7.jpg" %>
-      <h4>第7天</h4>
     </div>
   </div>
 </div>
@@ -611,9 +607,6 @@
     $('#slide_day_6').on('click', function(event){
       $('#modal_day_6').modal('show');
     });
-    $('#slide_day_7').on('click', function(event){
-      $('#modal_day_7').modal('show');
-    });
 
     load_calendar('2015-12-1', 'cal-2015-12');
     load_calendar('2016-1-1', 'cal-2016-1');
@@ -628,12 +621,20 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">第一天: 成都 - 东京成田</h4>
+                <h4 class="modal-title">第一天: 成都 - 大阪 - 奈良</h4>
             </div>
             <div class="modal-body itinery_modal_body">
               <div class="headline"><h4>行程概述</h4></div>
-              <p>双流国际机场集合，搭乘国际航班飞往东京，抵达后前往入住酒店休息。</p>
-              <p><span class="text-highlights text-highlights-blue">参考航班：CA459  （15:30-21:00）</span></p>
+              <p>于指定时间成都双流机场集合，专业领队机场开行前说明会，并协助旅客办理值机及边防手续，搭乘春秋航空，前往大阪关西国际空港。飞行4小时（备注：日本与中国时差1小时，如中国时间早上8点，日本时间为早上9点），抵达大阪关西机场，办理入境手续，导游接机，乘专车前往景点【奈良神鹿公园】（约60分钟）位于奈良市街的东边，东西长4公里、南北宽2公里，面积广阔，若草山、东大寺、春日大社、国立博物馆等奈良的名胜古迹大多在这里。成群嬉戏于公园里的鹿，因与春日大社流传的白鹿传说有关而受到保护，且被指定为国家的自然保护动物。</p>
+              <p><span class="text-highlights text-highlights-blue">参考航班：9C8563  （09：25-14:30）</span></p>
+              <p>
+                <strong>酒店:</strong>
+                关西地区酒店
+              </p>
+              <p>
+                <strong>用膳:</strong>
+                <span class="badge rounded badge-dark">晚</span>
+              </p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-u btn-u-lg btn-u-orange disabled" disabled="disabled">上一天</button>
@@ -648,28 +649,27 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">第二天: 东京</h4>
+                <h4 class="modal-title">第二天: 大阪 - 京都</h4>
             </div>
             <div class="modal-body itinery_modal_body">
-              <div class="headline"><h4>行程概述</h4></div>
-              <p>早餐后，乘车前往静谧美丽的<span class="color-blue">皇居广场</span>，在<span class="color-blue">二重桥</span>前拍照留念<span class="color-light-green">（不少于30分钟）</span>。接着前往<span class="color-blue">浅草雷门观音寺</span>祈福，<span class+'color-blue'>仲见世小商品街</span>观光<span class="color-light-green">（不少于50分钟）</span>。午后前往<span class="color-blue">东京新都心台场</span>，参观维纳斯城堡LAOX电器免税店自由购物（不少于60分钟），随后在世界三大繁华街之一的<span class="color-blue">银座大街</span>渡过悠闲的午后时光<span class="color-light-green">（不少于60分钟）</span>。<span class="color-red">（方便游玩本日晚餐自理）</span></p>
+              
               <p>
                 <strong>酒店:</strong>
-                东京巨蛋酒店或同级
+                中部地区酒店
               </p>
               <p>
                 <strong>用膳:</strong>
                 <span class="badge rounded badge-aqua">早</span>
-                <span class="badge rounded badge-u">中</span>
-                <span class="badge rounded badge-dark">晚</span>
+                <span class="badge rounded badge-u">中：日式定食或中华料理</span>
               </p>
               
               <div class="headline"><h4>景点</h4></div>
 
-              <p><strong>皇居：</strong>历代天皇及其家人的住所。整个皇居周围有护城河环绕，分为皇居、外苑、东苑，以及北之丸公园等几个区域。皇居的大部分不开放参观，平时游人只能在皇宫外苑外的皇宫广场附近游览一番。整个皇居区域林木葱葱，满目苍翠，作为世界上人口密度最大的城市之一的东京，在城市中心区域保留这么大一片绿地，实在堪称为都市绿洲。</p>
-              <p><strong>浅草寺仲见世街：</strong>浅草寺创建于628年，是东京都内最古老的寺院。入口处挂着写着“雷门”字样的巨大灯笼这里的象征。仲见世通是一条售卖各种土产礼品的商业街。约300米的路上，挤满了100多家店铺。</p>
-              <p><strong>银座：</strong>世界三大繁华街之一，是东京最繁华的商业区，现代日本的代表坐标。大道两旁的百货公司和各类商店鳞次栉比，专门销售高级商品。后街有很多饭店、小吃店、酒吧、夜总会。</p>
-              <p><strong>台场维纳斯城堡：</strong>“维纳斯城”是以中世纪的欧洲为模型所建造的主题乐园式商场。除了海外知名品牌外，还有东京发祥的流行品牌等，共约50家店铺。一层的老字号电器店LAOX贩卖最新的数码相机、手表、工艺品等种类繁多的各式商品。</p>
+              <p><strong>大阪城公园：</strong>约45分钟）日本三大城堡之一「大阪城」，丰臣秀吉于公元1583年在石山本愿寺遗址上初建，至今已有400多年历史，为当时日本第一名城，也是日本前所未有的最大城堡(不登城)。</p>
+              <p><strong>心斋桥：</strong>（约60分钟）在御堂筋大街东面与之平行的心斋桥筋商店街是大阪最知名的购物区，也是大阪的一个永久性标志。远在江户时期，这里就已形成了购物商圈，距今已有380年的历史。直到今天，这里依然是热闹非凡。</p>
+              <p><strong>道顿崛：</strong>道顿崛美食街位于日本大阪心斋桥附近，是大阪美食的代表地点。道顿崛美食街的一带都是大阪最繁华的商业区，几乎没有一寸土地不是被商铺所占据着。来到号称日本厨房的大阪，道顿崛美食街是绝对不能错过。</p>
+              <p><strong>伏见稻荷大社：</strong>（约40分钟）位于稻荷山的山麓，这里主要供奉以宇伽之御魂大神为首的诸位稻荷神，是深受京都人爱戴的神社之一，香火最为旺盛。稻荷神就是狐狸神，被认为保佑五谷丰收，衍生为商业繁荣。伏见稻荷大社内，到处可见口中叼着稻穗或谷物的狐狸，接受人们的膜拜与礼敬。</p>
+              <p><strong>祇园艺妓街：</strong>（约45分钟）是京都最具代表性的繁华街，从江户时代开始，茶馆就已经鳞次栉比，白川通的石板小路与两边的花街茶屋充满了浓浓的传统京都风味，两旁整齐林立着京都著名町家建筑的茶屋、餐厅与高级日本料理店，幸运的话您还能在此一窥舞妓和艺妓的美丽倩影。</p>
                 
             </div>
             <div class="modal-footer">
@@ -685,28 +685,27 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">第三天: 东京 - 富士 - 箱根 - 白桦湖</h4>
+                <h4 class="modal-title">第三天: 中部 - 伊豆</h4>
             </div>
             <div class="modal-body itinery_modal_body">
               <div class="headline"><h4>行程概述</h4></div>
-              <p>早餐后，乘车前往富士<span class="color-blue">箱根国立公园</span>游览。前往静谧美丽的<span class="color-blue">忍野八海</span><span class="color-light-green">（不少于30分钟）</span>远眺富士山，特别安排乘车登临<span class="color-blue">富士山五合目</span>，与日本神山零距离亲密接触（不少于50分钟）。午后，乘车前往长野。</p>
+              <p>前往日本最早赏樱名胜地【河津★】由于特殊地形，得天独厚的伊豆半岛年年是暖冬，从1月下旬起樱花就陆续绽放，其中最盛大、也是樱种最特别的是河津町河津川畔的河津樱，这种樱花属于早开的樱种，花期从2月初到3月上旬，长达1个月花期，花型大又是粉红色，异常美艳，盛开于河津川畔的樱花，谓之河津樱，最大的特色就是花形大，色呈最讨喜的粉红花色，且花期更长达一个月，同时也是日本最早盛开的樱花，走在粉红色的河畔樱花隧道中，无限的浪漫，与同时期的嫩黄油菜花，一同带来一场热闹的樱花祭典。</p>
               <p>晚间，入住白桦湖区域温泉，品尝使用季节食材制作的温泉料理，餐后伴着山间的新鲜氧气尽情享受泡汤乐趣。<span class="color-red">温馨提示：如遇富士山封路或天气原因不能参观，则改为参观富士山资料馆，特此说明。</span></p>
               <p>
                 <strong>酒店:</strong>
-                白桦湖池之平温泉酒店 <span class="label rounded label-orange">私享温泉</span>
+                伊豆或富士山地区
               </p>
               <p>
                 <strong>用膳:</strong>
                 <span class="badge rounded badge-aqua">早</span>
-                <span class="badge rounded badge-u">中</span>
+                <span class="badge rounded badge-u">中：日式风味定食</span>
+                <span class="badge rounded badge-u">晚：日式定食</span>
               </p>
 
               <div class="headline"><h4>景点</h4></div>
-              <p><strong>忍野八海：</strong>这里错落有致地散布着八个清泉，水质清冽甘甜，被誉为“日本九寨沟”。</p>
-              <p><strong>富士山：</strong>被日本人民誉为“圣岳”，是日本民族的象征。富士山由山脚到山顶分为十合，由山脚下出发到半山腰称为五合目，利用巴士可上到2305米的五合目，这里的景色一年四季随季节变化而不同，日出日落，气候变化，都会令富士山瞬间呈现不同的身影，千姿百态！</p>
-              
-              <div class="headline"><h4>美食</h4></div>
-              <p><strong>温泉餐</strong></p>
+              <p><strong>河津七泷回旋桥：</strong>又称「七泷高架桥」，是连结天城和伊豆东海岸的河津的交通要道，也是伊豆半岛上非常具有特色的公路景观。此桥共花费43亿2千万日币及3年的时间完成。在同类型桥中的规模是日本第一的。在前往河津的途中，从高空以360度回旋两圈直下山谷，让您直呼过瘾，大感惊奇。</p>
+              <p>伊豆第一绝景<strong>净莲瀑布：</strong>源自狩野川的支流本谷川的瀑布，柱状纹路的绝璧，因高低落差而形成之瀑布，落差２５公尺，瀑布宽为７公尺，素有『飞瀑激流』之美称。走进入口迎面处站立的是日本唯一诺贝尔文学奖得主「川端康成」之名著→【伊豆的舞娘】中的纪念铜像。</p>
+              <p><strong>骏河号渡轮：</strong>航行于骏河海湾，于此眺望端庄秀丽的日本第一名山与第一高峰「富士山」也是一个绝好的景致；游览车与乘客都进入船舱在65分钟的海运行程中，您可感受到「富士山」的壮观雄伟！并可一面欣赏海上富士山美景！（富士山美景依当时气候而定，如果天气晴朗您可以从海上看到整个富士山全貌喔）</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-u btn-u-lg btn-u-orange" onclick="$('#modal_day_3').modal('hide');$('#modal_day_2').modal('show',0);">上一天</button>
@@ -721,27 +720,27 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">第四天: 白桦湖 - 诹访 - 高山 - 白川乡 - 岐阜</h4>
+                <h4 class="modal-title">第四天: 富士山 - 东京</h4>
             </div>
             <div class="modal-body itinery_modal_body">
-              <div class="headline"><h4>行程概述</h4></div>
-              <p>早餐后，乘车前往高山地区，途中于<span class="color-blue">诹访湖</span>展望台眺望静谧湖水<span class="color-light-green">（不少于15分钟）</span>。</p>
-              <p>午后，游览国家指定史迹<span class="color-blue">高山阵屋</span><span class="color-light-green">（不少于40分钟）</span>，随后前往世界文化遗产<span class="color-blue">白川乡合掌村</span>游览<span class="color-light-green">（不少于60分钟）</span>，感受独特村落景观。傍晚前往中部地区酒店入住。</p>
+              
               <p>
                 <strong>酒店:</strong>
-                岐阜都酒店或同级
+                东京地区
               </p>
               <p>
                 <strong>用膳:</strong>
                 <span class="badge rounded badge-aqua">早</span>
-                <span class="badge rounded badge-u">中</span>
-                <span class="badge rounded badge-dark">晚</span>
+                <span class="badge rounded badge-u">中：日式烤肉</span>
               </p>
 
               <div class="headline"><h4>景点</h4></div>
-              <p><strong>诹访湖：</strong>位于长野县的中央，是湖面海拔 759 米，周长 16.2 公里的该县最大湖泊。</p>
-              <p><strong>高山阵屋：</strong>始建年代为1615年，至今有400年悠久历史。原为高山城主金森氏的宅邸之一。金森氏左迁后，高山成为德川幕府的直辖地区，在此设置了办公机构，以管理飞弹地区的行政。这个办公场所被称为“高山阵屋”，官员们在此下达命令、通知以及办理纳贡事宜等。自明治时期起，这里相继被用为县政厅、郡政厅、政府分支机构等。在日本，地方政府的建筑物保留至今的，唯此一处。 </p>
-              <p><strong>白川乡合掌村：</strong>白川乡位于岐阜县西北部白山山麓，是四面环山、水田纵横、河川流经的安静山村。那里“合掌造”（茅草的人字形木屋顶）式的民宅，110 多栋连成一片，1995 年被指定为联合国教科文组织的世界文化遗产。</p>
+              <p><strong>富士山五合目：</strong>（约60分钟）：“五合目”日语念作「ごごうめ」是指富士山的第五个高度的那个地方。一般在那里欣赏富士山的美景 富士山海拔3776米，富士山由山脚到山顶分为十合，日本人把每一段叫一‘合目’。由山脚下出发到半山腰称为五合目，到了海拔2305米高的五合目，气温是零下５度左右。日本满山遍野都被红叶包围着，真是层林尽染，煞是好看，美不胜收。这里的山丘原野，秋意正浓，枫叶染红了大地。林木包括了槭树、漆树、桦树、山毛榉等变色叶木，所以日本人把红叶都统称为枫叶。日本的秋天是多彩的。日本秋天漫长，多枫、山毛榉等秋天叶色转红的树木，与山明水秀的风土相得益彰，被视为世界上红叶最美的国家之一。不仅能充分欣赏到大自然的鬼斧神工，而且也观赏到大自然瞬息万变的独特魅力。</p>
+              <p class="text-warning">车辆行进高度以当天富士山官方预报为准，如果无法上五合目将更改为一合目，如遇天气情况不好富士山封山，将改为忍野八海替代，敬请谅解！</p>
+              <p><strong>浅草观音寺、仲见世商店街：</strong>日本观音寺总堂，相传在古天皇36年3月18日 SUMIDA川的三位渔民在出海捕鱼时，看到观音显现，建立浅草寺来供奉观音。浅草寺前的购物小街，游客可在此选购特色手信。 </p>
+              <p><strong>远眺天空之树：</strong>新东京地标；深具日本传统的美学意识，投射出聚集在铁塔的人们所表现出来的丰富对话之色彩。高333公尺的东京铁塔，一直是日本最高的建筑物，不过「日本最高」的称号，今天被取代，取名「天空树」的东京新铁塔，今天兴建高度达到338公尺，成为日本第一高建筑，这个新铁塔盖完后，将高达634公尺，成为仅次于杜拜哈里法塔，全球第二高建筑。</p>
+              <p><strong>综合免税店：</strong>（约50分钟）日本人气产品免税专门店, 客人可自由选购各种日本国民之健康流行食品及各种日本手信。</p>
+              <p><strong>银座：</strong>（约60分钟）的地价在世界上屈指可数, 为世界之最，是日本东京中央区的一个主要商业区，以高级购物商店闻名，是东京其中一个代表性地区。附件设有多家大型百货公司，包括三越、松屋百货、松板屋、春天百货等，高级品牌专门店如爱马仕、Gucci、Chanel，亦有各式饮食店及高级餐厅，高级夜总会等。</p>
                 
             </div>
             <div class="modal-footer">
@@ -757,26 +756,22 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">第五天: 岐阜 - 三重</h4>
+                <h4 class="modal-title">第五天: 东京 - 中部</h4>
             </div>
             <div class="modal-body itinery_modal_body">
-              <div class="headline"><h4>行程概述</h4></div>
-              <p>早餐后，前往三重伊势志摩半岛。游览海边著名景观<span class="color-blue">二见浦夫妇岩石</span><span class="color-light-green">（不少于30分钟）</span>，午餐享用著名的松阪牛肉烧烤，后前往参观传承2000年历史的日本国宝<span class="color-blue">伊势神宫</span><span class="color-light-green">（不少于40分钟）</span>，漫步遍布日式小店和美食小吃的<span class="color-blue">托福横丁</span>古街（不少于40分钟），晚间，入住世界遗产熊野古道名泉季之座，品纪伊半岛风味料理，浸身私汤放松旅途疲惫。</p>
               <p>
                 <strong>酒店:</strong>
-                三重季之座温泉酒店或同级 <span class="label rounded label-orange">私享温泉</span>
+                中部地区酒店
               </p>
               <p>
                 <strong>用膳:</strong>
                 <span class="badge rounded badge-aqua">早</span>
-                <span class="badge rounded badge-u">中</span>
-                <span class="badge rounded badge-dark">晚</span>
+                <span class="badge rounded badge-dark">晚:日式风味定食</span>
               </p>
 
               <div class="headline"><h4>景点</h4></div>
-              <p><strong>伊势神宫：</strong>日本地位最高的神社，在皇位继承等时，天皇也来这里参拜。倘佯在古木参天的树林中，心灵如同得到了净化。神宫前的古街，重现了昔日的百年老店、饮食店等，漫步其中，别有情趣。</p>
-              <p><strong>托福横丁古街：</strong>位于三重县伊势市伊势神宫内宫前的托福横丁正是因此典故和人们为了感谢在此生意持久兴隆而得名的。托福横丁再现了江户时代的街景，游客可在洋溢着古代参拜者热闹气氛之传统的、房屋栉比的街道中享受美食及购物之乐。</p>
-              <p><strong>二见浦夫妇岩：</strong>位于日本的三重县的二见浦的得名来自古代神话传说。神话中的女神倭姬惊叹此处之景的美丽，两次回头眺望，故名二见浦。二见浦的东端是被叫作“男岩”和“女岩”的夫妻岩。它们充当了兴玉神社的神体─兴玉神石的天然“鸟居”（日本神社的大门）。</p>
+              <p><strong>秋叶原电器店：</strong>（约60分钟）东京著名电气店,可以自由选购日本最新款、最高科技电器及电子产品。</p>
+              <p><strong>皇居外苑：</strong>（二重桥）（停留约30分钟）历代天皇及其家人的住所。皇居的大部分不开放参观，平时游人只能在皇宫外苑外的皇宫广场附近游览一番。整个皇居区域林木葱葱，满目苍翠，可说是闹区中的宁静。</p>
 
               <div class="headline"><h4>美食</h4></div>
               <p><strong>温泉餐</strong></p>
@@ -795,59 +790,18 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">第六天: 三重 - 奈良 - 大阪 - 京都</h4>
+                <h4 class="modal-title">第六天: 中部 - 大阪 - 成都</h4>
             </div>
             <div class="modal-body itinery_modal_body">
               <div class="headline"><h4>行程概述</h4></div>
-              <p>早餐后，乘车前往千年古都奈良。前往参观奈良公园内的著名世界遗产-<span class="color-blue">春日大社</span><span class="color-light-blue">（合计不少于50分钟）</span>，与温顺的小鹿共度悠闲时光。游览结束乘车前往繁华商都大阪，参观大阪的标志建筑——建于1583年的<span class="color-blue">大阪城公园</span><span class="color-red"><span class="color-red">（不登城）</span></span><span class="color-light-green">（不少于50分钟）</span>，午后前往综合免税店<span class="color-light-green">（不少于60分钟）</span>自由购物。随后来到最著名的商业街----<span class="color-blue">心斋桥道顿崛美食街</span>自由观光<span class="color-light-green">（不少于60分钟）</span>。<span class="color-red">（方便购物，餐敬请自理）</span></p>
-              <p>
-                <strong>酒店:</strong>
-                京都威斯汀酒店或同级
-              </p>
+              <p>早餐后，到达大阪关西机场，办理登机手机，搭乘航班返回成都，回到温馨的家！</p>
               <p>
                 <strong>用膳:</strong>
                 <span class="badge rounded badge-aqua">早</span>
-                <span class="badge rounded badge-u">中</span>
-                <span class="badge rounded badge-dark">晚</span>
               </p>
-
-              <div class="headline"><h4>景点</h4></div>
-              <p><strong>奈良公园：</strong>游走公园中的每个角落，聆听古寺庙宇中传来的梵钟声，随处可见漫步的鹿群。传说春日大社的神祗就是骑着一头白鹿来到奈良，所以鹿被视作神的使者受到严密的保护，得以自在地繁衍到今天。</p>
-              <p><strong>春日大社：</strong>日本三大神社之一，被登入世界文化遗产。并立的4个社殿组成本殿，围绕本殿的朱红色的回廊与春日山麓的绿色丛林相映成辉，与屋檐下垂下的灯笼和社殿一起构成了一幅情趣盎然的风景画。</p>
-              <p><strong>大阪城公园：</strong>系丰臣秀吉于1583年所建，是由雄伟的石墙砌造而成，大阪城公园内城中央耸立着大阪城的主体建筑天守阁，镶铜镀金，十分壮观。</p>
-              <p><strong>心斋桥繁华街：</strong>心斋桥作为大阪最大的繁华街，集中了许多精品屋和专卖店，从早到晚熙熙攘攘，到处是市民和游客的人流。心斋桥是以带有拱廊设施的心斋桥筋商店街为中心发展起来的。这里大型百货店、百年老铺、面向平民的各种小店铺鳞次栉比。</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-u btn-u-lg btn-u-orange" onclick="$('#modal_day_6').modal('hide');$('#modal_day_5').modal('show',0);">上一天</button>
-                <button type="button" class="btn btn-u btn-u-lg btn-u-light-green" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-u btn-u-lg btn-u-orange" onclick="$('#modal_day_6').modal('hide');$('#modal_day_7').modal('show');">下一天</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div>
-
-<div id="modal_day_7" class="modal fade modal_itinery">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">第七天: 京都 - 关西机场 - 成都</h4>
-            </div>
-            <div class="modal-body itinery_modal_body">
-              <div class="headline"><h4>行程概述</h4></div>
-              <p>早餐后，京都市内游览。<span class="color-blue">平安神宫</span>外苑<span class="color-light-green">（不少于20分钟）</span>。参观世界遗产-<span class="color-blue">清水寺及坂道街</span><span class="color-light-green">（不少于60分钟）</span>，感受历史与自然的融合。随后，漫步<span class="color-blue">祗园</span>，找寻艺伎时代风情<span class="color-light-green">（不少于30分钟）</span>。京都游览结束后乘坐巴士前往机场，搭乘国际航班回到成都，结束美妙的日本之旅！ </p>
-              <p>
-                <strong>用膳:</strong>
-                <span class="badge rounded badge-aqua">早</span>
-                <span class="badge rounded badge-u">中</span>
-              </p>
-
-              <div class="headline"><h4>景点</h4></div>
-              <p><strong>清水寺及坂道街：</strong>作为日本国宝被收录进世界遗产名录的清水寺，本身就是一首婉转流淌的风物诗，歌唱着古都京都的旧貌新颜，一砖一瓦都记录着这里岁月的变迁。徜徉在安静祥和的坂道街，信手买来浓郁当地特色的纪念品，古刹，坂道，美景，路人，美好的一切令旅人流连忘返。</p>
-              <p><strong>祗园：</strong>花见小路通街道是祗园街正中南北走向的一条保持了京都历史古老风貌的著名街道，古香古色、竹篱红墙的茶屋、高级餐馆料亭，店头悬挂有“舞妓”的小红灯笼，令整条街充满了浓郁的花街柳巷情趣，这里是体验京都古文化精华的必游之处。</p>
-              <p><strong>平安神宫：</strong>平安神宫建于1895年，是为了纪念日本古都平安迁都1100周年而建的，其内供奉着在京都在位的第一位天皇奉桓武天皇和最后一位天皇孝明天皇。其造型按平安京八分之五的缩图设计。院内林木茂盛，是明治时代园林建筑的代表。</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-u btn-u-lg btn-u-orange" onclick="$('#modal_day_7').modal('hide');$('#modal_day_6').modal('show',0);">上一天</button>
                 <button type="button" class="btn btn-u btn-u-lg btn-u-light-green" data-dismiss="modal">关闭</button>
                 <button type="button" class="btn btn-u btn-u-lg btn-u-orange disabled" disabled="disabled">下一天</button>
             </div>
