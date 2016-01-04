@@ -215,8 +215,11 @@ div.huang_features
   margin-left:60px;
 }
 .huang_price ul.nav-tabs li a {
-  font-size: 16px;
+  font-size: 18px;
   padding: 10px;
+  em {
+    font-size: 14px;
+  }
 }
 .huang_price.tab-v1 .tab-content{
   padding-top: 0;

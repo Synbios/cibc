@@ -5,6 +5,7 @@ class DeparturesController < ApplicationController
   # GET /departures.json
   def index
     @departures = Departure.all
+    render layout: "shijiebang"
   end
 
   # GET /departures/1

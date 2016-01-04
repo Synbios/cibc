@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     post 'api', to: 'api#message'
   end
 
+  resources :departures
   
 
   match '/japan', to: 'tours#show', via: 'get'
