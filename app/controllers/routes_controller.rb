@@ -15,6 +15,7 @@ class RoutesController < ApplicationController
 
   # GET /routes/new
   def new
+    @tour = Tour.find_by_id params[:tour_id]
     @route = Route.new
   end
 
