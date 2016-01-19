@@ -1,12 +1,25 @@
 Rails.application.routes.draw do
+
   namespace :wechat do
     resources :tours, only: [:index, :show]
-
+    resources :days, only: [:show]
     get 'api', to: 'api#check'
     post 'api', to: 'api#message'
+
+    resources :routes, only: [] do
+      resources :departures, only: [:index]
+    end
   end
 
-  resources :departures
+  resources :tours do
+    resources :routes, shallow: true do
+      resources :days, shallow: true
+      resources :departures, shallow: true
+    end
+    
+    resources :slides, shallow: true
+    resources :high_lights, shallow: true
+  end
   
 
   match '/japan', to: 'tours#show', via: 'get'

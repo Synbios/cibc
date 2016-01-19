@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Days</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Route_id</th>
+      <th>Number</th>
+      <th>Modal title</th>
+      <th>Modal content</th>
+      <th>Previous day</th>
+      <th>Next day</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @days.each do |day| %>
+      <tr>
+        <td><%= day.route_id %></td>
+        <td><%= day.number %></td>
+        <td><%= day.modal_title %></td>
+        <td><%= day.modal_content %></td>
+        <td><%= day.previous_day_id %></td>
+        <td><%= day.next_day_id %></td>
+        <td><%= link_to 'Show', day %></td>
+        <td><%= link_to 'Edit', edit_day_path(day) %></td>
+        <td><%= link_to 'Destroy', day, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Day', new_route_day_path(@route) %>

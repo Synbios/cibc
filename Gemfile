@@ -36,6 +36,8 @@ gem 'actionpack-xml_parser'
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
 
+gem "paperclip", "~> 4.3"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -53,6 +55,10 @@ group :development, :test do
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
   gem 'capistrano-secrets-yml', '~> 1.0.0'
+
+  gem 'awesome_print', '~> 1.2.0'
+  gem 'better_errors'
+  gem 'jazz_hands'
 end
 group :production do
   #gem 'pg'

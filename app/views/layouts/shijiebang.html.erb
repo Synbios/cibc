@@ -11,7 +11,7 @@
   <meta name="author" content="Michael Zhou">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico">
 
   <!-- Web Fonts -->
   <!-- <link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Roboto+Slab:400,300,700'> -->
@@ -36,6 +36,7 @@
   <![endif]-->
   
   <%= yield :stylesheets %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
   <div class="wrapper">

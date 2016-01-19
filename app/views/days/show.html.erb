@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @day.number %>
+</p>
+<%= image_tag @day.icon.url(:thumb) %>
+<p>
+  <strong>Modal title:</strong>
+  <%= @day.modal_title %>
+</p>
+
+<p>
+  <strong>Modal content:</strong>
+  <%= @day.modal_content %>
+</p>
+
+<p>
+  <strong>Previous day:</strong>
+  <%= @day.previous_day_id %>
+</p>
+
+<p>
+  <strong>Next day:</strong>
+  <%= @day.next_day_id %>
+</p>
+
+<%= link_to 'Edit', edit_day_path(@day) %> |
+<%= link_to 'Back', route_days_path(@day.route) %>

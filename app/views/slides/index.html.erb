@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Slides</h1>
+<h2>Tour: <%= @tour.name %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Tour</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @slides.each do |slide| %>
+      <tr>
+        <td><%= slide.name %></td>
+        <td><%= slide.tour_id %></td>
+        <td><%= link_to 'Show', slide %></td>
+        <td><%= link_to 'Edit', edit_slide_path(slide) %></td>
+        <td><%= link_to 'Destroy', slide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Slide', new_tour_slide_path(@tour) %>

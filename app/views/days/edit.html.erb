@@ -1,0 +1,8 @@
+<h1>Editing Day</h1>
+<h2>Tour: <%= @day.route.tour.name %></h2>
+<h3>Route: <%= @day.route.name %></h3>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @day %> |
+<%= link_to 'Back', route_days_path(@day.route) %>

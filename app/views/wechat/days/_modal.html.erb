@@ -1,0 +1,25 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title"><%= day.modal_title.html_safe %></h4>
+    </div>
+    <div class="modal-body itinery_modal_body">
+      <%= day.modal_content.html_safe %>
+    </div>
+    <div class="modal-footer">
+      <% if previous_day.nil? %>
+        <button type="button" class="btn btn-u btn-u-lg btn-u-orange disabled" disabled="disabled">上一天</button>
+      <% else %>
+        <%= link_to wechat_day_path(previous_day), :remote => true, class: "btn btn-u btn-u-lg btn-u-orange" do %>上一天<% end %>
+      <% end %>
+
+      <button type="button" class="btn btn-u btn-u-lg btn-u-light-green" data-dismiss="modal">关闭</button>
+      
+      <% if next_day.nil? %>
+        <button type="button" class="btn btn-u btn-u-lg btn-u-orange disabled" disabled="disabled">下一天</button>
+      <% else %>
+        <%= link_to wechat_day_path(next_day), :remote => true, class: "btn btn-u btn-u-lg btn-u-orange" do %>下一天<% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

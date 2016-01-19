@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing High Lights</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Tour</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @high_lights.each do |high_light| %>
+      <tr>
+        <td><%= high_light.name %></td>
+        <td><%= high_light.tour_id %></td>
+        <td><%= link_to 'Show', high_light %></td>
+        <td><%= link_to 'Edit', edit_high_light_path(high_light) %></td>
+        <td><%= link_to 'Destroy', high_light, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New High light', new_tour_high_light_path(@tour) %>

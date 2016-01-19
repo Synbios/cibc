@@ -1,0 +1,9 @@
+<%= month_calendar events: @departures do |date, departures| %>
+  <%= date %>
+
+  <% departures.each do |departure| %>
+    <span class="message">
+      <%= departure.price %>
+    </span>
+  <% end %>
+<% end %>

@@ -1,3 +1,4 @@
+<% if false %>
 <% content_for :script do %>
 <script>
   var use_wx_js_api = true;
@@ -49,7 +50,7 @@
   });
 </script>
 <% end %>
-
+<% end %>
 <div class="sys-masthead">
   <%= link_to wechat_tours_path, class: "sys-masthead-logo" do %>
     <%= image_tag "huang/logo.png" %>
@@ -74,7 +75,7 @@
         data-easing="Back.easeInOut"
         data-endeasing="Power1.easeIn"
         data-endspeed="300">
-        高调日本乐享本州早樱旅游
+        <%= @tour.name.html_safe %>
         </div>
 
         <!-- LAYER -->
@@ -89,8 +90,7 @@
         data-endeasing="Power1.easeIn"
         data-captionhidden="off"
         style="z-index: 6">
-        伊豆 / 早樱季 / 直飞白班机<br/>
-        温泉酒店 / 河津樱!
+        <%= @tour.slider_subtitle.html_safe %>
         </div>
 
         <!-- LAYER -->
@@ -176,50 +176,53 @@
 
 <div class="container margin-bottom-10">
   <div class="headline"><h3>行程地图</h3></div>
-  <%= image_tag "/img/huang/map2.jpg", style: "width:100%" %>
+  <%= image_tag @tour.tour_map.url(:standard), style: "width:100%" %>
 </div>
 
-<div class="container margin-bottom-10">
-  <div id="itinery_slider" class="owl-carousel owl-theme">
-    <div class="item" id="slide_day_1">
-      <%= image_tag "huang/tour/1.jpg" %>
-      <h4>第1天</h4>
-    </div>
-    <div class="item" id="slide_day_2">
-      <%= image_tag "huang/tour/2.jpg" %>
-      <h4>第2天</h4>
-    </div>
-    <div class="item" id="slide_day_3">
-      <%= image_tag "huang/tour/3.jpg" %>
-      <h4>第3天</h4>
-    </div>
-    <div class="item" id="slide_day_4">
-      <%= image_tag "huang/tour/4.jpg" %>
-      <h4>第4天</h4>
-    </div>
-    <div class="item" id="slide_day_5">
-      <%= image_tag "huang/tour/5.jpg" %>
-      <h4>第5天</h4>
-    </div>
-    <div class="item" id="slide_day_6">
-      <%= image_tag "huang/tour/6.jpg" %>
-      <h4>第6天</h4>
+<div class="container tab-content margin-bottom-10">
+  <div class="tab-pane fade in active route1">
+    <div id="itinery_slider" class="owl-carousel owl-theme">
+      <div class="item" id="slide_day_1">
+        <%= image_tag "huang/tour/1.jpg" %>
+        <h4>第1天</h4>
+      </div>
+      <div class="item" id="slide_day_2">
+        <%= image_tag "huang/tour/2.jpg" %>
+        <h4>第2天</h4>
+      </div>
+      <div class="item" id="slide_day_3">
+        <%= image_tag "huang/tour/3.jpg" %>
+        <h4>第3天</h4>
+      </div>
+      <div class="item" id="slide_day_4">
+        <%= image_tag "huang/tour/4.jpg" %>
+        <h4>第4天</h4>
+      </div>
+      <div class="item" id="slide_day_5">
+        <%= image_tag "huang/tour/5.jpg" %>
+        <h4>第5天</h4>
+      </div>
+      <div class="item" id="slide_day_6">
+        <%= image_tag "huang/tour/6.jpg" %>
+        <h4>第6天</h4>
+      </div>
     </div>
   </div>
+  <div class="tab-pane fade in route2"></div>
 </div>
 
 <div class="container">
   <div class="tab-v1 huang_price">
     <ul class="nav nav-tabs">
       <li class="active" >
-        <a href="#home" data-toggle="tab">六日行程<br><em>4380元起</em></a>
+        <a href=".route1" data-toggle="tab">六日行程<br><em>4380元起</em></a>
       </li>
       <li>
-        <a href="#profile" data-toggle="tab">七日行程<br><em>4880元起</em></a>
+        <a href=".route2" data-toggle="tab">七日行程<br><em>4880元起</em></a>
       </li>
     </ul>
     <div class="tab-content">
-      <div class="tab-pane fade in active" id="home">
+      <div class="tab-pane fade in active route1">
         <table class="table table-bordered">
           <tbody>
             <tr>
@@ -298,7 +301,7 @@
           </tbody>
         </table>
       </div>
-      <div class="tab-pane fade in" id="profile">
+      <div class="tab-pane fade in route2">
 
         <table class="table table-bordered">
           <tbody>
@@ -567,6 +570,24 @@
     });
   }
 
+  function show_day_modal(day_id){
+    $.ajax({
+      type:  "GET",
+      url:   '/wechat/days/' + day_id,
+      dataType: "script",
+      beforeSend: function(data) {
+      },
+      success: function(data) {
+        
+      },
+      error : function(request, status, error) {   
+        console.log(status);
+        console.log(error);
+        console.log(request.responseText);
+      } 
+    });
+  }
+
   $(document).ready(function() {
  
     var owl = $("#itinery_slider");
@@ -797,6 +818,24 @@
                 <button type="button" class="btn btn-u btn-u-lg btn-u-orange" onclick="$('#modal_day_6').modal('hide');$('#modal_day_5').modal('show',0);">上一天</button>
                 <button type="button" class="btn btn-u btn-u-lg btn-u-light-green" data-dismiss="modal">关闭</button>
                 <button type="button" class="btn btn-u btn-u-lg btn-u-orange disabled" disabled="disabled">下一天</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div id="modal_day_detail" class="modal fade modal_itinery">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+              
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-u btn-u-lg btn-u-orange" >上一天</button>
+                <button type="button" class="btn btn-u btn-u-lg btn-u-light-green" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-u btn-u-lg btn-u-orange" >下一天</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

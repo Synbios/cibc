@@ -4,7 +4,8 @@ class DeparturesController < ApplicationController
   # GET /departures
   # GET /departures.json
   def index
-    @departures = Departure.all
+    @route = Route.find_by_id params[:route_id]
+    @departures = @route.departures
     render layout: "shijiebang"
   end
 

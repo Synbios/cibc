@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @slide.name %>
+</p>
+
+<p>
+  <strong>Tour:</strong>
+  <%= @slide.tour_id %>
+</p>
+
+<p>
+  <%= image_tag @slide.image.url %>
+</p>
+<%= link_to 'Edit', edit_slide_path(@slide) %> |
+<%= link_to 'Back', tour_slides_path(@slide.tour) %>

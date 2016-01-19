@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  modal_title: MyString
+  modal_content: MyString
+  previous_day_id: 1
+  next_day_id: 1
+
+two:
+  number: 1
+  modal_title: MyString
+  modal_content: MyString
+  previous_day_id: 1
+  next_day_id: 1

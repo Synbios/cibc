@@ -1,0 +1,1 @@
+$('#modal_day_detail').html('<%= escape_javascript( render partial: 'wechat/days/modal', locals: { day: @day, previous_day: @previous_day, next_day: @next_day } ) %>').modal('show');
