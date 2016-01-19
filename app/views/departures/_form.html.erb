@@ -1,4 +1,4 @@
-<%= form_for(@departure) do |f| %>
+<%= form_for [@route, @departure] do |f| %>
   <% if @departure.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@departure.errors.count, "error") %> prohibited this departure from being saved:</h2>

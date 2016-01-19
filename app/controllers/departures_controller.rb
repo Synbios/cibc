@@ -16,6 +16,7 @@ class DeparturesController < ApplicationController
 
   # GET /departures/new
   def new
+    @route = Route.find_by_id params[:route_id]
     @departure = Departure.new
   end
 
@@ -26,8 +27,9 @@ class DeparturesController < ApplicationController
   # POST /departures
   # POST /departures.json
   def create
+    @route = Route.find_by_id params[:route_id]
     @departure = Departure.new(departure_params)
-
+    @departure.route = @route
     respond_to do |format|
       if @departure.save
         format.html { redirect_to @departure, notice: 'Departure was successfully created.' }
