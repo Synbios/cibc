@@ -1,19 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="container container-sm">
+  <div class="tag-box tag-box-v3 margin-bottom-40">
+    <h2>资源所在位置</h2>
+    <p>团队: <%= @departure.route.tour.name %></p>
+    <p>线路: <%= @departure.route.name %></p>
+  </div>
+  
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @departure.start_time %>
-</p>
+  <p>
+    <strong>出发日期:</strong>
+    <%= @departure.start_time.strftime("%Y-%m-%d") %>
+  </p>
 
-<p>
-  <strong>Seats:</strong>
-  <%= @departure.seats %>
-</p>
+  <p>
+    <strong>座位数:</strong>
+    <%= @departure.seats %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @departure.price %>
-</p>
+  <p>
+    <strong>价格:</strong>
+    <%= @departure.price %>
+  </p>
 
-<%= link_to 'Edit', edit_departure_path(@departure) %> |
-<%= link_to 'Back', route_departures_path(@departure.route) %>
+
+<%= link_to '修改', edit_departure_path(@departure) %> |
+<%= link_to '返回団期列表', route_departures_path(@departure.route) %>
+</div>

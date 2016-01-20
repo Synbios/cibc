@@ -1,4 +1,9 @@
-<%= form_for [@route, @departure] do |f| %>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag '/unify/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag '/unify/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css', media: 'all', 'data-turbolinks-track' => true %>
+<% end %>
+
+<%= form_for [@route, @departure], html: { multipart: true, class: "sky-form" } do |f| %>
   <% if @departure.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@departure.errors.count, "error") %> prohibited this departure from being saved:</h2>
@@ -11,19 +16,34 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :start_time %><br>
-    <%= f.datetime_select :start_time %>
-  </div>
-  <div class="field">
-    <%= f.label :seats %><br>
-    <%= f.number_field :seats %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.number_field :price %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <fieldset>
+    <section>
+      <%= f.label :seats, "座位数", class: "label" %>
+      <label class="input">
+        <%= f.number_field :seats %>
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :price, "价格/人", class: "label" %>
+      <label class="input">
+        <%= f.number_field :price %>
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :start_time, "出发日期", class: "label" %>
+      <label class="input">
+        <%= f.date_select :start_time %>
+      </label>
+    </section>    
+  </fieldset>
+
+  <footer>
+    <button type="submit" class="btn-u">提交</button>
+    <button type="button" class="btn-u btn-u-default" onclick="window.history.back();">Back</button>
+  </footer>
+
+
+
 <% end %>

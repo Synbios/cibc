@@ -1,37 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="container container-sm">
+  <p id="notice"><%= notice %></p>
 
-<h1>Listing Days</h1>
+  <div class="tag-box tag-box-v3 margin-bottom-40">
+    <h2>资源所在位置</h2>
+    <p>团队: <%= @route.tour.name %></p>
+    <p>线路: <%= @route.name %></p>
+  </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Route_id</th>
-      <th>Number</th>
-      <th>Modal title</th>
-      <th>Modal content</th>
-      <th>Previous day</th>
-      <th>Next day</th>
-      <th colspan="3">Actions</th>
-    </tr>
-  </thead>
+  <div class="headline">
+    <h2>每日详情列表</h2>
+  </div>
 
-  <tbody>
-    <% @days.each do |day| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= day.route_id %></td>
-        <td><%= day.number %></td>
-        <td><%= day.modal_title %></td>
-        <td><%= day.modal_content %></td>
-        <td><%= day.previous_day_id %></td>
-        <td><%= day.next_day_id %></td>
-        <td><%= link_to 'Show', day %></td>
-        <td><%= link_to 'Edit', edit_day_path(day) %></td>
-        <td><%= link_to 'Destroy', day, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>第几天</th>
+        <th>上一天</th>
+        <th>下一天</th>
+        <th>具体操作</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @days.each do |day| %>
+        <tr>
+          <td><%= day.number %></td>
+          <td><%= day.previous_day.number unless day.previous_day.nil? %></td>
+          <td><%= day.next_day.number unless day.next_day.nil? %></td>
+          <td>
+            <%= link_to '查看', day, class: "btn btn-success btn-xs" %>
+            <%= link_to '修改', edit_day_path(day), class: "btn btn-warning btn-xs" %>
+            <%= link_to '删除', day, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Day', new_route_day_path(@route) %>
+  <br>
+
+  <%= link_to '添加一天', new_route_day_path(@route) %> |
+  <%= link_to '返回线路列表', tour_routes_path(@route.tour) %>
+</div>

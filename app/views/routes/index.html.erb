@@ -1,33 +1,43 @@
-<p id="notice"><%= notice %></p>
+<div class="container container-sm">
+  <p id="notice"><%= notice %></p>
 
-<h1>Listing Routes</h1>
+  <div class="tag-box tag-box-v3 margin-bottom-40">
+    <h2>团队名称</h2>
+    <p><%= @tour.name %></p>
+  </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Tour</th>
-      <th>Name</th>
-      <th colspan="3">Actions</th>
-      <th>Days</th>
-      <th>Departures</th>
-    </tr>
-  </thead>
+  <div class="headline">
+    <h2>线路列表</h2>
+  </div>
 
-  <tbody>
-    <% @routes.each do |route| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= route.tour_id %></td>
-        <td><%= route.name %></td>
-        <td><%= link_to 'Show', route %></td>
-        <td><%= link_to 'Edit', edit_route_path(route) %></td>
-        <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Days', route_days_path(route) %></td>
-        <td><%= link_to 'Departures', route_departures_path(route) %></td>
+        <th>线路名称</th>
+        <th>具体操作</th>
+        <th>每日详情</th>
+        <th>团旗和价格</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @tour.routes.each do |route| %>
+        <tr>
+          <td><%= route.name %></td>
+          <td>
+            <%= link_to '查看', route, class: "btn btn-success btn-xs" %>
+            <%= link_to '修改', edit_route_path(route), class: "btn btn-warning btn-xs" %>
+            <%= link_to '删除', route, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+          </td>
+          <td><%= link_to '添加/修改', route_days_path(route) %></td>
+          <td><%= link_to '添加/修改', route_departures_path(route) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Route', new_tour_route_path %>
+  <br>
+
+  <%= link_to '添加新线路', new_tour_route_path(@tour) %> |
+  <%= link_to '返回团队列表', tours_path %>
+</div>

@@ -83,38 +83,52 @@
   </div>
 
   <div class="container margin-bottom-10">
+
+    <% @tours.each do |tour| %>
     <div class="index_tour_item">
-      <div class="hd"><span class="price"><em>￥20999 </em>起</span>
-        <a href="/super/1696/">
-          <div class="title">醉美新西兰南岛奇遇 <br><em>9日</em>深度自驾旅行
-          </div>
-        </a>
+      <div class="hd"><span class="price"><em>￥<%= tour.start_price %> </em>起</span>
+        <%= link_to wechat_tour_path tour do %>
+          <div class="title"><%= tour.cover_title.html_safe %></div>
+        <% end %>
       </div>
       <div class="bd">
-        <div class="pic"><a href="/super/1696/"><img data-src="http://f5.sjbly.cn/m15/1116/1010/00vhf_750x500_fem.jpg" src="http://f5.sjbly.cn/m15/1116/1010/00vhf_750x500_fem.jpg" class="lazy-loaded"></a>
+        <div class="pic">
+          <%= link_to wechat_tour_path tour do %>
+            <%= image_tag tour.cover_image_large.url %>
+          <% end %>
           <i class="icon-a-list-intro"></i>
           <i class="icon-a-list-pic-cover"></i>
 
           <div class="info">
-            <div class="txt count"><em>27</em>项深度体验</div>
+            <div class="txt count"><%= tour.cover_info.html_safe %></div>
           </div>
         </div>
         <ul class="fn-list">
           <li>
-            <a href="/super/1696/"><img data-src="http://f2.sjbly.cn/m14/0227/1816/7570joc_800x533_fs.jpg" src="http://f2.sjbly.cn/m14/0227/1816/7570joc_800x533_fs.jpg" class="lazy-loaded"></a>
+            <%= link_to wechat_tour_path tour do %>
+              <%= image_tag tour.cover_image_small_a.url %>
+            <% end %>
           </li>
           <li>
-            <a href="/super/1696/"><img data-src="http://f2.sjbly.cn/m14/0228/1000/yuegengsno_570x380_fs.jpg" src="http://f2.sjbly.cn/m14/0228/1000/yuegengsno_570x380_fs.jpg" class="lazy-loaded"></a>
+            <%= link_to wechat_tour_path tour do %>
+              <%= image_tag tour.cover_image_small_b.url %>
+            <% end %>
           </li>
           <li>
-            <a href="/super/1696/"><img data-src="http://f2.sjbly.cn/m14/0214/1441/7570jfp_900x480_fs.jpg" src="http://f2.sjbly.cn/m14/0214/1441/7570jfp_900x480_fs.jpg" class="lazy-loaded"></a>
+            <%= link_to wechat_tour_path tour do %>
+              <%= image_tag tour.cover_image_small_c.url %>
+            <% end %>
           </li>
           <li>
-            <a href="/super/1696/"><img data-src="http://f2.sjbly.cn/m14/0214/1441/7570jfp_900x480_fs.jpg" src="http://f2.sjbly.cn/m14/0214/1441/7570jfp_900x480_fs.jpg" class="lazy-loaded"></a>
+            <%= link_to wechat_tour_path tour do %>
+              <%= image_tag tour.cover_image_small_d.url %>
+            <% end %>
           </li>
         </ul>
         </div>
       </div>
+      <% end %>
+
     </div>
   </div>
 </div>

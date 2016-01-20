@@ -1,5 +1,17 @@
-<h1>New Slide</h1>
+<div class="container container-sm">
+  <div class="tag-box tag-box-v3 margin-bottom-40">
+    <h2>团队名称</h2>
+    <p><%= @tour.name %></p>
+  </div>
+  
+  <div class="headline">
+    <h2>新建幻灯片</h2>
+  </div>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', tour_slides_path(@tour) %>
+  <%= render 'form' %>
+  <br>
+  <p class="text-center">
+    <%= link_to 'Back', tour_slides_path(@tour) %>
+  </p>
+  
+</div>

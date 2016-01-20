@@ -1,6 +1,13 @@
-<h1>Editing Tour</h1>
+<div class="container container-sm">
+  <div class="headline">
+    <h2>编辑团队</h2>
+  </div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @tour %> |
-<%= link_to 'Back', tours_path %>
+  <%= render 'form' %>
+  <br>
+  <p class="text-center">
+    <%= link_to '查看', @tour %> |
+    <%= link_to '返回列表', tours_path %>
+  </p>
+  
+</div>

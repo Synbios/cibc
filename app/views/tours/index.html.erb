@@ -1,37 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="container container-sm">
+  <p id="notice"><%= notice %></p>
 
-<h1>Listing Tours</h1>
+  <div class="headline">
+    <h2>团队总表</h2>
+  </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Slider subtitle</th>
-      <th colspan="3">Actions</th>
-      <th>Routes</th>
-      <th>Slides</th>
-      <th>Hightlights</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tours.each do |tour| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= tour.id %></td>
-        <td><%= tour.name %></td>
-        <td><%= tour.slider_subtitle %></td>
-        <td><%= link_to 'Show', tour %></td>
-        <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
-        <td><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Routes', tour_routes_path(tour) %></td>
-        <td><%= link_to 'Slides', tour_slides_path(tour) %></td>
-        <td><%= link_to 'Hightlights', tour_high_lights_path(tour) %></td>
+        <th>团队名称</th>
+        <th>具体操作</th>
+        <th>线路</th>
+        <th>幻灯图</th>
+        <th>亮点图</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @tours.each do |tour| %>
+        <tr>
+          <td><%= tour.name %></td>
+          <td>
+            <%= link_to '查看', tour, class: "btn btn-success btn-xs" %>
+            <%= link_to '修改', edit_tour_path(tour), class: "btn btn-warning btn-xs" %>
+            <%= link_to '删除', tour, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+          </td>
+          <td><%= link_to '添加/修改', tour_routes_path(tour) %></td>
+          <td><%= link_to '添加/修改', tour_slides_path(tour) %></td>
+          <td><%= link_to '添加/修改', tour_high_lights_path(tour) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Tour', new_tour_path %>
+  <br>
+
+  <%= link_to '新建团队', new_tour_path %>
+</div>
+

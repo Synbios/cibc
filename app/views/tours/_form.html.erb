@@ -1,4 +1,9 @@
-<%= form_for @tour, html: { multipart: true } do |f| %>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag '/unify/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag '/unify/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css', media: 'all', 'data-turbolinks-track' => true %>
+<% end %>
+
+<%= form_for @tour, html: { multipart: true, class: "sky-form" } do |f| %>
   <% if @tour.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tour.errors.count, "error") %> prohibited this tour from being saved:</h2>
@@ -10,28 +15,99 @@
       </ul>
     </div>
   <% end %>
+  
+  <fieldset>
+    <section>
+      <%= f.label :name, "名称/主标题", class: "label" %>
+      <label class="input">
+        <%= f.text_field :name %>
+      </label>
+    </section>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :tour_map %><br>
-    <%= f.file_field :tour_map %>
-  </div>
-  <div class="field">
-    <%= f.label :features %><br>
-    <%= f.text_area :features, rows: 10 %>
-  </div>
-  <div class="field">
-    <%= f.label :terms %><br>
-    <%= f.text_area :terms, rows: 10 %>
-  </div>
-  <div class="field">
-    <%= f.label :slider_subtitle %><br>
-    <%= f.text_field :slider_subtitle %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <section>
+      <%= f.label :slider_subtitle, "副标题", class: "label" %>
+      <label class="input">
+        <%= f.text_field :slider_subtitle %>
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :tour_map, "线路地图(总图)", class: "label" %>
+      <label for="file" class="input input-file">
+        <div class="button"><%= f.file_field :tour_map %>选择文件</div><input type="text" readonly="">
+      </label>
+    </section>
+  
+    <section>
+      <%= f.label :features, "幻灯图下方亮点", class: "label" %>
+      <label class="textarea">
+        <%= f.text_area :features, rows: 20 %>
+      </label>
+      <div class="note"><strong>注意:</strong> 填入html元素.</div>
+    </section>
+
+    <section>
+      <%= f.label :terms, "参团须知和说明等", class: "label" %>
+      <label class="textarea">
+        <%= f.text_area :terms, rows: 20 %>
+      </label>
+      <div class="note"><strong>注意:</strong> 填入html元素.</div>
+    </section>
+  </fieldset>
+
+  <fieldset>
+    <section>
+      <%= f.label :cover_title, "封面标题", class: "label" %>
+      <label class="input">
+        <%= f.text_field :cover_title %>
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :cover_info, "封面右下角信息", class: "label" %>
+      <label class="input">
+        <%= f.text_field :cover_info %>
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :cover_image_large, "封面大图", class: "label" %>
+      <label for="file" class="input input-file">
+        <div class="button"><%= f.file_field :cover_image_large %>选择文件</div><input type="text" readonly="">
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :cover_image_small_a, "封面小图1", class: "label" %>
+      <label for="file" class="input input-file">
+        <div class="button"><%= f.file_field :cover_image_small_a %>选择文件</div><input type="text" readonly="">
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :cover_image_small_b, "封面小图2", class: "label" %>
+      <label for="file" class="input input-file">
+        <div class="button"><%= f.file_field :cover_image_small_b %>选择文件</div><input type="text" readonly="">
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :cover_image_small_c, "封面小图3", class: "label" %>
+      <label for="file" class="input input-file">
+        <div class="button"><%= f.file_field :cover_image_small_c %>选择文件</div><input type="text" readonly="">
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :cover_image_small_d, "封面小图4", class: "label" %>
+      <label for="file" class="input input-file">
+        <div class="button"><%= f.file_field :cover_image_small_d %>选择文件</div><input type="text" readonly="">
+      </label>
+    </section>
+  </fieldset>
+
+  <footer>
+    <button type="submit" class="btn-u">提交</button>
+    <button type="button" class="btn-u btn-u-default" onclick="window.history.back();">Back</button>
+  </footer>
 <% end %>

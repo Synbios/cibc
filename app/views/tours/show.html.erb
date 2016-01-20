@@ -1,6 +1,143 @@
-<h2><%= @tour.name %></h2>
+<p id="notice"><%= notice %></p>
+
+<%= link_to '修改', edit_tour_path(@tour) %> |
+<%= link_to '返回列表', tours_path %>
+
+<div class="sys-masthead">
+  <%= link_to wechat_tours_path, class: "sys-masthead-logo" do %>
+    <%= image_tag "huang/logo.png" %>
+  <% end %>
+</div>
+
+<div class="grey_bg tour_list">
+  <br>
+  <div class="container margin-bottom-10">
+    <div class="index_tour_item">
+      <div class="hd"><span class="price"><em>￥<%= @tour.start_price %> </em>起</span>
+        <a href="#">
+          <div class="title"><%= @tour.cover_title.html_safe %></div>
+        </a>
+      </div>
+      <div class="bd">
+        <div class="pic">
+          <a href="#">
+            <%= image_tag @tour.cover_image_large.url %>
+          </a>
+          <i class="icon-a-list-intro"></i>
+          <i class="icon-a-list-pic-cover"></i>
+
+          <div class="info">
+            <div class="txt count"><%= @tour.cover_info.html_safe %></div>
+          </div>
+        </div>
+        <ul class="fn-list">
+          <li>
+            <a href="#">
+              <%= image_tag @tour.cover_image_small_a.url %>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <%= image_tag @tour.cover_image_small_b.url %>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <%= image_tag @tour.cover_image_small_c.url %>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <%= image_tag @tour.cover_image_small_d.url %>
+            </a>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tp-banner-container">
+  <div class="tp-banner">
+    <ul>
+      <% @tour.slides.each do |slide| %>
+      <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="mainSlide">
+        <!-- MAIN IMAGE -->
+        <%= image_tag slide.image.url, alt: "darkblurbg", :"data-bgfit" => "cover", :"data-bgposition" => "left top", :"data-bgrepeat" => "no-repeat" %>
+
+        <div class="tp-caption revolution-ch1_c sft start"
+        data-x="center"
+        data-hoffset="0"
+        data-y="230"
+        data-speed="1500"
+        data-start="500"
+        data-easing="Back.easeInOut"
+        data-endeasing="Power1.easeIn"
+        data-endspeed="300">
+        <%= @tour.name.html_safe  unless @tour.name.nil? %>
+        </div>
+
+        <!-- LAYER -->
+        <div class="tp-caption revolution-ch2_c sft"
+        data-x="center"
+        data-hoffset="0"
+        data-y="350"
+        data-speed="1400"
+        data-start="2000"
+        data-easing="Power4.easeOut"
+        data-endspeed="300"
+        data-endeasing="Power1.easeIn"
+        data-captionhidden="off"
+        style="z-index: 6">
+        <%= @tour.slider_subtitle.html_safe unless @tour.slider_subtitle.nil? %>
+        </div>
+
+        <!-- LAYER -->
+        <!-- <div class="tp-caption sft"
+        data-x="center"
+        data-hoffset="0"
+        data-y="310"
+        data-speed="1600"
+        data-start="2800"
+        data-easing="Power4.easeOut"
+        data-endspeed="300"
+        data-endeasing="Power1.easeIn"
+        data-captionhidden="off"
+        style="z-index: 6">
+          <a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">点我电询</a>
+        </div> -->
+      </li>
+      <% end %>
+
+    </ul>
+    <div class="tp-bannertimer tp-bottom"></div>
+  </div>
+</div>
+<div style="width: 100%">
+  <%= image_tag "/img/huang/t1-ad-1.jpg", style: "width: 100%; margin: 10px 0 20px 0" %>
+</div>
 <div class="no-padding">
   <div class="container">
-    <%= @tour.features.html_safe %>
+    <%= @tour.features.html_safe unless @tour.features.nil? %>
   </div>
+
+  <div class="container huang_features_2">
+    <% @tour.high_lights.each do |high_light| %>
+      <div class="col-xs-6">
+        <%= image_tag high_light.image.url %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+<div class="container margin-bottom-10">
+  <div class="headline"><h3>行程地图</h3></div>
+  <%= image_tag @tour.tour_map.url(:standard), style: "width:100%" %>
+</div>
+
+<div class="panel-group acc-v1 huang_accordion" id="accordion-1">
+  <h3 class="according_heading">预定须知</h3>
+  <%= @tour.terms.html_safe unless @tour.terms.nil? %>
 </div>

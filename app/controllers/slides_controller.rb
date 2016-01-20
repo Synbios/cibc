@@ -12,16 +12,19 @@ class SlidesController < ApplicationController
   # GET /slides/1
   # GET /slides/1.json
   def show
+    render layout: "shijiebang"
   end
 
   # GET /slides/new
   def new
     @tour = Tour.find_by_id params[:tour_id]
     @slide = Slide.new
+    render layout: "shijiebang"
   end
 
   # GET /slides/1/edit
   def edit
+    render layout: "shijiebang"
   end
 
   # POST /slides
@@ -30,7 +33,7 @@ class SlidesController < ApplicationController
     @tour = Tour.find_by_id params[:tour_id]
     @slide = Slide.new(slide_params)
     @slide.tour = @tour
-    
+
     respond_to do |format|
       if @slide.save
         format.html { redirect_to @slide, notice: 'Slide was successfully created.' }

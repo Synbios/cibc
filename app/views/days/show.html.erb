@@ -1,29 +1,66 @@
-<p id="notice"><%= notice %></p>
+<div class="container container-sm">
+  <div class="tag-box tag-box-v3 margin-bottom-40">
+    <h2>资源所在位置</h2>
+    <p>团队: <%= @day.route.tour.name %></p>
+    <p>线路: <%= @day.route.name %></p>
+  </div>
+  
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Number:</strong>
-  <%= @day.number %>
-</p>
-<%= image_tag @day.icon.url(:thumb) %>
-<p>
-  <strong>Modal title:</strong>
-  <%= @day.modal_title %>
-</p>
+  <p>
+    <strong>第几天:</strong>
+    <%= @day.number %>
+  </p>
 
-<p>
-  <strong>Modal content:</strong>
-  <%= @day.modal_content %>
-</p>
+  <p>
+    <strong>图标:</strong>
+    <%= image_tag @day.icon.url(:thumb), id: "day_icon", class: "img-thumbnail" %>
+    <em>点击图标看详情</em>
+  </p>
 
-<p>
-  <strong>Previous day:</strong>
-  <%= @day.previous_day_id %>
-</p>
+  <p>
+    <strong>前一天:</strong>
+    <%= @day.previous_day.number unless @day.previous_day.nil? %>
 
-<p>
-  <strong>Next day:</strong>
-  <%= @day.next_day_id %>
-</p>
+  </p>
 
-<%= link_to 'Edit', edit_day_path(@day) %> |
-<%= link_to 'Back', route_days_path(@day.route) %>
+  <p>
+    <strong>后一天:</strong>
+    <%= @day.next_day.number unless @day.next_day.nil? %>
+  </p>
+
+  <%= link_to '修改', edit_day_path(@day) %> |
+  <%= link_to '返回列表', route_days_path(@day.route) %>
+</div>
+
+<% content_for :modals do %>
+<div id="modal_day_detail" class="modal fade modal_itinery">
+  <div class="modal-dialog"></div>
+</div>
+<% end %>
+
+<% content_for :script do %>
+<script>
+  function call_ajax(url){
+    $.ajax({
+      type: "GET",
+      url: url,
+      dataType: "script",
+      beforeSend: function(data) {},
+      success: function(data) {},
+      error : function(request, status, error) {   
+        alert(request.responseText);
+      } 
+    });
+  }
+
+  $(document).ready(function() {
+ 
+    $('#day_icon').on('click', function(event){
+      call_ajax('<%= wechat_day_path(@day.id).html_safe %>');
+    });
+    
+ 
+  });
+</script>
+<% end %>

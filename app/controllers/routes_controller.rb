@@ -4,23 +4,31 @@ class RoutesController < ApplicationController
   # GET /routes
   # GET /routes.json
   def index
-    @routes = Tour.find_by_id(params[:tour_id]).routes
+    @tour = Tour.find_by_id(params[:tour_id])
     render layout: "shijiebang"
   end
 
   # GET /routes/1
   # GET /routes/1.json
   def show
+    @routes = [@route]
+    @this_month = Time.now
+    @next_month = @this_month + 1.month
+    @next_next_month = @this_month + 2.month
+    @tour = @route.tour
+    render layout: "shijiebang"
   end
 
   # GET /routes/new
   def new
     @tour = Tour.find_by_id params[:tour_id]
     @route = Route.new
+    render layout: "shijiebang"
   end
 
   # GET /routes/1/edit
   def edit
+    render layout: "shijiebang"
   end
 
   # POST /routes

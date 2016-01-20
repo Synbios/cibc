@@ -1,6 +1,6 @@
 class Route < ActiveRecord::Base
-  has_many :days
-  has_many :departures
+  has_many :days, dependent: :destroy
+  has_many :departures, dependent: :destroy
   belongs_to :tour
 
   def reorder

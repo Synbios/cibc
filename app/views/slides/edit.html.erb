@@ -1,6 +1,18 @@
-<h1>Editing Slide</h1>
+<div class="container container-sm">
+  <div class="tag-box tag-box-v3 margin-bottom-40">
+    <h2>团队名称</h2>
+    <p><%= @slide.tour.name %></p>
+  </div>
+  
+  <div class="headline">
+    <h2>编辑幻灯片</h2>
+  </div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @slide %> |
-<%= link_to 'Back',  tour_slides_path(@slide.tour) %>
+  <%= render 'form' %>
+  <br>
+  <p class="text-center">
+    <%= link_to '查看', @slide %> |
+    <%= link_to '返回列表', tour_slides_path(@slide.tour) %>
+  </p>
+  
+</div>

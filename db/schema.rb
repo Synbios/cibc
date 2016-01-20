@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119024153) do
+ActiveRecord::Schema.define(version: 20160120071703) do
 
   create_table "days", force: :cascade do |t|
     t.integer  "number",            limit: 4
@@ -76,16 +76,38 @@ ActiveRecord::Schema.define(version: 20160119024153) do
   end
 
   create_table "tours", force: :cascade do |t|
-    t.string   "name",                  limit: 255
-    t.string   "slider_subtitle",       limit: 255
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "tour_map_file_name",    limit: 255
-    t.string   "tour_map_content_type", limit: 255
-    t.integer  "tour_map_file_size",    limit: 4
+    t.string   "name",                             limit: 255
+    t.string   "slider_subtitle",                  limit: 255
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.string   "tour_map_file_name",               limit: 255
+    t.string   "tour_map_content_type",            limit: 255
+    t.integer  "tour_map_file_size",               limit: 4
     t.datetime "tour_map_updated_at"
-    t.text     "features",              limit: 65535
-    t.text     "terms",                 limit: 65535
+    t.text     "features",                         limit: 65535
+    t.text     "terms",                            limit: 65535
+    t.string   "cover_title",                      limit: 255
+    t.string   "cover_image_large_file_name",      limit: 255
+    t.string   "cover_image_large_content_type",   limit: 255
+    t.integer  "cover_image_large_file_size",      limit: 4
+    t.datetime "cover_image_large_updated_at"
+    t.string   "cover_image_small_a_file_name",    limit: 255
+    t.string   "cover_image_small_a_content_type", limit: 255
+    t.integer  "cover_image_small_a_file_size",    limit: 4
+    t.datetime "cover_image_small_a_updated_at"
+    t.string   "cover_image_small_b_file_name",    limit: 255
+    t.string   "cover_image_small_b_content_type", limit: 255
+    t.integer  "cover_image_small_b_file_size",    limit: 4
+    t.datetime "cover_image_small_b_updated_at"
+    t.string   "cover_image_small_c_file_name",    limit: 255
+    t.string   "cover_image_small_c_content_type", limit: 255
+    t.integer  "cover_image_small_c_file_size",    limit: 4
+    t.datetime "cover_image_small_c_updated_at"
+    t.string   "cover_image_small_d_file_name",    limit: 255
+    t.string   "cover_image_small_d_content_type", limit: 255
+    t.integer  "cover_image_small_d_file_size",    limit: 4
+    t.datetime "cover_image_small_d_updated_at"
+    t.string   "cover_info",                       limit: 255
   end
 
 end

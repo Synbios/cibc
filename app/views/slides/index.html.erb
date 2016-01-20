@@ -1,30 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="container container-sm">
+  <p id="notice"><%= notice %></p>
 
-<h1>Listing Slides</h1>
-<h2>Tour: <%= @tour.name %></h2>
+  <div class="tag-box tag-box-v3 margin-bottom-40">
+    <h2>团队名称</h2>
+    <p><%= @tour.name %></p>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Tour</th>
-      <th colspan="3">Actions</th>
-    </tr>
-  </thead>
+  <div class="headline">
+    <h2>添加幻灯片</h2>
+  </div>
 
-  <tbody>
-    <% @slides.each do |slide| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= slide.name %></td>
-        <td><%= slide.tour_id %></td>
-        <td><%= link_to 'Show', slide %></td>
-        <td><%= link_to 'Edit', edit_slide_path(slide) %></td>
-        <td><%= link_to 'Destroy', slide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>幻灯片名称</th>
+        <th>具体操作</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @slides.each do |slide| %>
+        <tr>
+          <td><%= slide.name %></td>
+          <td>
+            <%= link_to '查看', slide, class: "btn btn-success btn-xs" %>
+            <%= link_to '修改', edit_slide_path(slide), class: "btn btn-warning btn-xs" %>
+            <%= link_to '删除', slide, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Slide', new_tour_slide_path(@tour) %>
+  <br>
+
+  <%= link_to '新建幻灯片', new_tour_slide_path(@tour) %> |
+  <%= link_to '返回团队列表', tours_path %>
+</div>

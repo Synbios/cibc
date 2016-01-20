@@ -1,29 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="container container-sm">
+  <p id="notice"><%= notice %></p>
 
-<h1>Listing High Lights</h1>
+  <div class="tag-box tag-box-v3 margin-bottom-40">
+    <h2>团队名称</h2>
+    <p><%= @tour.name %></p>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Tour</th>
-      <th colspan="3">Actions</th>
-    </tr>
-  </thead>
+  <div class="headline">
+    <h2>亮点列表</h2>
+  </div>
 
-  <tbody>
-    <% @high_lights.each do |high_light| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= high_light.name %></td>
-        <td><%= high_light.tour_id %></td>
-        <td><%= link_to 'Show', high_light %></td>
-        <td><%= link_to 'Edit', edit_high_light_path(high_light) %></td>
-        <td><%= link_to 'Destroy', high_light, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>亮点图名称</th>
+        <th>具体操作</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @high_lights.each do |high_light| %>
+        <tr>
+          <td><%= high_light.name %></td>
+          <td>
+            <%= link_to '查看', high_light, class: "btn btn-success btn-xs" %>
+            <%= link_to '修改', edit_high_light_path(high_light), class: "btn btn-warning btn-xs" %>
+            <%= link_to '删除', high_light, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New High light', new_tour_high_light_path(@tour) %>
+  <br>
+
+  <%= link_to '新建亮点图', new_tour_high_light_path(@tour) %> |
+  <%= link_to '返回团队列表', tours_path %>
+</div>

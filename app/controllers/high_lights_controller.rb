@@ -12,16 +12,19 @@ class HighLightsController < ApplicationController
   # GET /high_lights/1
   # GET /high_lights/1.json
   def show
+    render layout: "shijiebang"
   end
 
   # GET /high_lights/new
   def new
     @tour = Tour.find_by_id params[:tour_id]
     @high_light = HighLight.new
+    render layout: "shijiebang"
   end
 
   # GET /high_lights/1/edit
   def edit
+    render layout: "shijiebang"
   end
 
   # POST /high_lights

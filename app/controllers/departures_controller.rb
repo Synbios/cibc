@@ -12,16 +12,19 @@ class DeparturesController < ApplicationController
   # GET /departures/1
   # GET /departures/1.json
   def show
+    render layout: "shijiebang"
   end
 
   # GET /departures/new
   def new
     @route = Route.find_by_id params[:route_id]
     @departure = Departure.new
+    render layout: "shijiebang"
   end
 
   # GET /departures/1/edit
   def edit
+    render layout: "shijiebang"
   end
 
   # POST /departures

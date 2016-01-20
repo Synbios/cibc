@@ -12,12 +12,19 @@ class DaysController < ApplicationController
   # GET /days/1
   # GET /days/1.json
   def show
+    render layout: "shijiebang"
   end
 
   # GET /days/new
   def new
     @route = Route.find_by_id params[:route_id]
     @day = Day.new(route_id: @route.id)
+    days = @route.days.order("number")
+    if days.empty?
+      @day.number = 1
+    else
+      @day.number = days.last.number + 1
+    end
     render layout: "shijiebang"
   end
 
