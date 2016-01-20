@@ -64,7 +64,7 @@ class SlidesController < ApplicationController
   def destroy
     @slide.destroy
     respond_to do |format|
-      format.html { redirect_to slides_url, notice: 'Slide was successfully destroyed.' }
+      format.html { redirect_to tour_slides_url(@slide.tour), notice: 'Slide was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

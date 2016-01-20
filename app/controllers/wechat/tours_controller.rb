@@ -13,7 +13,7 @@ class Wechat::ToursController < ApplicationController
     @this_month = Time.now
     @next_month = @this_month + 1.month
     @next_next_month = @this_month + 2.month
-    #@wx_signature = wechat_generate_jsapi_signature request.url
+    @wx_signature = wechat_generate_jsapi_signature request.url
     render layout: "shijiebang"
   end
 end

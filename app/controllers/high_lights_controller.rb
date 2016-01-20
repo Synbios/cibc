@@ -63,7 +63,7 @@ class HighLightsController < ApplicationController
   def destroy
     @high_light.destroy
     respond_to do |format|
-      format.html { redirect_to high_lights_url, notice: 'High light was successfully destroyed.' }
+      format.html { redirect_to tour_high_lights_url(@high_light.tour), notice: 'High light was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

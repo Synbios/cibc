@@ -63,7 +63,7 @@ class DeparturesController < ApplicationController
   def destroy
     @departure.destroy
     respond_to do |format|
-      format.html { redirect_to departures_url, notice: 'Departure was successfully destroyed.' }
+      format.html { redirect_to route_departures_url(@departure.route), notice: 'Departure was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
