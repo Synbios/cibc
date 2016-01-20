@@ -3,6 +3,7 @@ class Wechat::ToursController < ApplicationController
 
   def index
   	@tours = Tour.all
+  	@wx_signature = wechat_generate_jsapi_signature request.url
     render layout: "shijiebang"
   end
 
