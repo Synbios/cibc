@@ -56,15 +56,11 @@
 </div>
 
 <div class="fw-slider owl-carousel owl-theme margin-bottom-10">
+  <% @main_slides.each do |main_slide| %>
   <div class="item">
-    <%= image_tag "huang/index/slide_2.jpg", alt: "" %>
+    <%= image_tag main_slide.image.url , alt: "" %>
   </div>
-  <div class="item">
-    <%= image_tag "huang/index/slide_1.jpg", alt: "" %>
-  </div>
-  <div class="item">
-    <%= image_tag "huang/index/slide_3.jpg", alt: "" %>
-  </div>
+  <% end %>
 </div>
 
 <div class="sys-container">

@@ -57,6 +57,13 @@
 
   <fieldset>
     <section>
+      <%= f.label :order, "显示顺序(不填或小于1则不在首页显示)", class: "label" %>
+      <label class="input">
+        <%= f.number_field :order %>
+      </label>
+    </section>
+
+    <section>
       <%= f.label :cover_title, "封面标题", class: "label" %>
       <label class="input">
         <%= f.text_field :cover_title %>

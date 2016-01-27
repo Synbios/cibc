@@ -333,27 +333,27 @@ a.accordion-toggle {
 
 .simple-calendar table {
   table-layout: fixed;
- border: 1px solid #ddd;
- border-top: none;
- border-collapse: collapse;
- font-family: Georgia, Times, serif;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-collapse: collapse;
+  font-family: Georgia, Times, serif;
 }
 .simple-calendar table th {
- border: 1px solid #ddd;
- border-top: none;
- background-color: #eee;
- height: 50px;
- padding: 5px;
- vertical-align: middle !important; 
- text-align: center;
+  border: 1px solid #ddd;
+  border-top: none;
+  background-color: #eee;
+  height: 50px;
+  padding: 5px;
+  vertical-align: middle !important; 
+  text-align: center;
 }
 .simple-calendar table td {
   padding: 3px !important;
   position: relative;
- border: 1px solid #ddd;
- background-color: #fff;
- height: 50px;
- vertical-align: top;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  height: 50px;
+  vertical-align: top;
 }
 
 .simple-calendar table td span.message {
@@ -362,6 +362,10 @@ a.accordion-toggle {
   right: 3px;    
   bottom: 3px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.simple-calendar table td.past span.message {
+  color: #aaa;
 }
 
 .simple-calendar table .day {

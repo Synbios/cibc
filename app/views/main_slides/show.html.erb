@@ -1,0 +1,28 @@
+<div class="container container-sm">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>名称:</strong>
+    <%= @main_slide.name %>
+  </p>
+
+  <p>
+    <strong>顺序</strong>
+    <%= @main_slide.order %>
+  </p>
+
+  <p>
+    <strong>显示</strong>
+    <% if @main_slide.active %>
+      上线
+    <% else %>
+      下线
+    <% end %>
+  </p>
+
+  <p>
+    <%= image_tag @main_slide.image.url %>
+  </p>
+  <%= link_to 'Edit', edit_main_slide_path(@main_slide) %> |
+  <%= link_to 'Back', main_slides_path %>
+</div>

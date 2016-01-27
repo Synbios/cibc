@@ -1,0 +1,42 @@
+<div class="container container-sm">
+  <p id="notice"><%= notice %></p>
+
+  <div class="headline">
+    <h2>首页幻灯片</h2>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>图片名称</th>
+        <th>排列顺序</th>
+        <th>是否上线</th>
+        <th>具体操作</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @main_slides.each do |main_slide| %>
+        <tr>
+          <td><%= main_slide.name %></td>
+          <td><%= main_slide.order %></td>
+          <% if main_slide.active.present? && main_slide.active.to_s != '0' %>
+            <td>可见</td>
+          <% else %>
+            <td>不可见</td>
+          <% end %>
+          <td>
+            <%= link_to '查看', main_slide, class: "btn btn-success btn-xs" %>
+            <%= link_to '修改', edit_main_slide_path(main_slide), class: "btn btn-warning btn-xs" %>
+            <%= link_to '删除', main_slide, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to '新建首页幻灯片', new_main_slide_path %> <%= link_to '团队列表', tours_path %>
+</div>
+

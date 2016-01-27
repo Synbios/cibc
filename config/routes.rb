@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     resources :slides, shallow: true
     resources :high_lights, shallow: true
   end
+
+  resources :main_slides
   
 
   match '/japan', to: 'tours#show', via: 'get'

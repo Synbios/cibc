@@ -2,7 +2,8 @@ class Wechat::ToursController < ApplicationController
   include Wechat::MasterHelper
 
   def index
-  	@tours = Tour.all
+  	@tours = Tour.where("tours.order > ?", 0).order(:order)
+  	@main_slides = MainSlide.where(active: true)
   	@wx_signature = wechat_generate_jsapi_signature request.url
     render layout: "shijiebang"
   end

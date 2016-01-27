@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160120071703) do
+ActiveRecord::Schema.define(version: 20160127034054) do
 
   create_table "days", force: :cascade do |t|
     t.integer  "number",            limit: 4
@@ -40,6 +40,18 @@ ActiveRecord::Schema.define(version: 20160120071703) do
   create_table "high_lights", force: :cascade do |t|
     t.string   "name",               limit: 255
     t.integer  "tour_id",            limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+  end
+
+  create_table "main_slides", force: :cascade do |t|
+    t.string   "name",               limit: 255
+    t.integer  "order",              limit: 4
+    t.boolean  "active",             limit: 1
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "image_file_name",    limit: 255
@@ -108,6 +120,7 @@ ActiveRecord::Schema.define(version: 20160120071703) do
     t.integer  "cover_image_small_d_file_size",    limit: 4
     t.datetime "cover_image_small_d_updated_at"
     t.string   "cover_info",                       limit: 255
+    t.integer  "order",                            limit: 4
   end
 
 end
