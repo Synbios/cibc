@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127034054) do
+ActiveRecord::Schema.define(version: 20160129064116) do
 
   create_table "days", force: :cascade do |t|
     t.integer  "number",            limit: 4
@@ -85,6 +85,17 @@ ActiveRecord::Schema.define(version: 20160127034054) do
     t.datetime "expires_at"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "tour_categories", force: :cascade do |t|
+    t.string   "name",              limit: 255
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "icon_file_name",    limit: 255
+    t.string   "icon_content_type", limit: 255
+    t.integer  "icon_file_size",    limit: 4
+    t.datetime "icon_updated_at"
+    t.integer  "order",             limit: 4
   end
 
   create_table "tours", force: :cascade do |t|

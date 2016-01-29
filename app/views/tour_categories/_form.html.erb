@@ -1,0 +1,47 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag '/unify/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag '/unify/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css', media: 'all', 'data-turbolinks-track' => true %>
+<% end %>
+
+<%= form_for @tour_category, html: { multipart: true, class: "sky-form" } do |f| %>
+  <% if @tour_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tour_category.errors.count, "error") %> prohibited this slide from being saved:</h2>
+
+      <ul>
+      <% @tour_category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <section>
+      <%= f.label :name, "名称", class: "label" %>
+      <label class="input">
+        <%= f.text_field :name %>
+      </label>
+    </section>
+
+     <section>
+      <%= f.label :order, "顺序", class: "label" %>
+      <label class="input">
+        <%= f.number_field :order %>
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :icon, "小图标", class: "label" %>
+      <label for="file" class="input input-file">
+        <div class="button"><%= f.file_field :icon, as: :file %>选择文件</div><input type="text" readonly="">
+      </label>
+    </section>
+  
+  </fieldset>
+
+  <footer>
+    <button type="submit" class="btn-u">提交</button>
+    <button type="button" class="btn-u btn-u-default" onclick="window.history.back();">Back</button>
+  </footer>
+<% end %>

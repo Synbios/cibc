@@ -1,0 +1,19 @@
+<div class="container container-sm">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>名称:</strong>
+    <%= @tour_category.name %>
+  </p>
+
+  <p>
+    <strong>顺序</strong>
+    <%= @tour_category.order %>
+  </p>
+
+  <p>
+    <%= image_tag @tour_category.icon.url %>
+  </p>
+  <%= link_to 'Edit', edit_tour_category_path(@tour_category) %> |
+  <%= link_to 'Back', tour_categories_path %>
+</div>

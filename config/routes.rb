@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   end
 
   resources :main_slides
+
+  resources :tour_categories
   
 
   match '/japan', to: 'tours#show', via: 'get'

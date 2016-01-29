@@ -1,0 +1,36 @@
+<div class="container container-sm">
+  <p id="notice"><%= notice %></p>
+
+  <div class="headline">
+    <h2>团队分类</h2>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>类别名称</th>
+        <th>排列顺序</th>
+        <th>具体操作</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tour_categories.each do |tour_category| %>
+        <tr>
+          <td><%= tour_category.name %></td>
+          <td><%= tour_category.order %></td>
+          <td>
+            <%= link_to '查看', tour_category, class: "btn btn-success btn-xs" %>
+            <%= link_to '修改', edit_tour_category_path(tour_category), class: "btn btn-warning btn-xs" %>
+            <%= link_to '删除', tour_category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to '新建团队分类', new_tour_category_path %> <%= link_to '团队列表', tours_path %>
+</div>
+
