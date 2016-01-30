@@ -31,6 +31,7 @@ class ToursController < ApplicationController
   # POST /tours.json
   def create
     @tour = Tour.new(tour_params)
+    #@tour.tour_categories = TourCategory.where(id: params[:tour_category_ids])
 
     respond_to do |format|
       if @tour.save
@@ -122,7 +123,7 @@ class ToursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
-      params.require(:tour).permit(:name, :slider_subtitle, :tour_map, :features, :terms, :order, :cover_title, :cover_info, :cover_image_large, :cover_image_small_a, :cover_image_small_b, :cover_image_small_c, :cover_image_small_d)
+      params.require(:tour).permit(:name, :slider_subtitle, :tour_map, :features, :terms, :order, :cover_title, :cover_info, :cover_image_large, :cover_image_small_a, :cover_image_small_b, :cover_image_small_c, :cover_image_small_d, :wechat_share_title, :wechat_share_description, :wechat_share_icon, :tour_category_ids => [])
     end
 
     

@@ -2,11 +2,15 @@ class Wechat::ToursController < ApplicationController
   include Wechat::MasterHelper
 
   def index
-  	@tour_categories = TourCategory.limit(8).order(:order)
-  	@tour_category = TourCategory.find_by_id(params[:tour_category_id])
-  	@tours = Tour.where("tours.order > ?", 0).order(:order)
-  	@main_slides = MainSlide.where(active: true)
-  	@wx_signature = wechat_generate_jsapi_signature request.url
+    @tour_categories = TourCategory.limit(8).order(:order)
+    @tour_category = TourCategory.find_by_id(params[:tour_category_id])
+    if @tour_category.present?
+      @tours = Tour.joins(:tour_categories).where("tours.order > ? AND tour_categories.id = ?", 0, @tour_category.id).order(:order)
+     else
+      @tours = Tour.where("tours.order > ?", 0).order(:order)
+    end
+    @main_slides = MainSlide.where(active: true)
+    @wx_signature = wechat_generate_jsapi_signature request.url
     render layout: "shijiebang"
   end
 

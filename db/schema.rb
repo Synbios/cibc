@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129064116) do
+ActiveRecord::Schema.define(version: 20160129074732) do
 
   create_table "days", force: :cascade do |t|
     t.integer  "number",            limit: 4
@@ -98,6 +98,14 @@ ActiveRecord::Schema.define(version: 20160129064116) do
     t.integer  "order",             limit: 4
   end
 
+  create_table "tour_categories_tours", force: :cascade do |t|
+    t.integer "tour_id",          limit: 4
+    t.integer "tour_category_id", limit: 4
+  end
+
+  add_index "tour_categories_tours", ["tour_category_id"], name: "index_tour_categories_tours_on_tour_category_id", using: :btree
+  add_index "tour_categories_tours", ["tour_id"], name: "index_tour_categories_tours_on_tour_id", using: :btree
+
   create_table "tours", force: :cascade do |t|
     t.string   "name",                             limit: 255
     t.string   "slider_subtitle",                  limit: 255
@@ -132,6 +140,12 @@ ActiveRecord::Schema.define(version: 20160129064116) do
     t.datetime "cover_image_small_d_updated_at"
     t.string   "cover_info",                       limit: 255
     t.integer  "order",                            limit: 4
+    t.string   "wechat_share_title",               limit: 255
+    t.string   "wechat_share_description",         limit: 255
+    t.string   "wechat_share_icon_file_name",      limit: 255
+    t.string   "wechat_share_icon_content_type",   limit: 255
+    t.integer  "wechat_share_icon_file_size",      limit: 4
+    t.datetime "wechat_share_icon_updated_at"
   end
 
 end
