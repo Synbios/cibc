@@ -58,8 +58,7 @@
 <div class="fw-slider owl-carousel owl-theme margin-bottom-10">
   <% @main_slides.each do |main_slide| %>
   <div class="item">
-    <img class="lazy" data-original="<%= main_slide.image.url(:medium) %>">
-    <%#= image_tag main_slide.image.url , alt: "" %>
+    <%= image_tag main_slide.image.url(:medium) , alt: "" %>
   </div>
   <% end %>
 </div>
