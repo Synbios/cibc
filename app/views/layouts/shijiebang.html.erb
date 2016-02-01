@@ -39,7 +39,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="wrapper">
+  <div id="preloader"></div>
+  <div class="mainContent wrapper">
     <%#= render "layouts/header" %>
     <%= yield %>
     <%#= render "layouts/footer" %>
@@ -67,6 +68,17 @@
   <%= javascript_include_tag '/jquery.lazyload.js', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'shijiebang', media: 'all', 'data-turbolinks-eval' => false %>
   <%= yield :script %>
+  <script>
+    jQuery(document).ready(function($) {  
+      $(document).ready(function(){
+        $('#preloader').fadeOut('slow',function(){
+          //$(this).remove();
+          $('.mainContent').fadeIn('slow');
+        });
+
+      });
+    });
+  </script>
   <!--[if lt IE 9]>
     <%= javascript_include_tag '/unify/assets/plugins/respond.js' %>
     <%= javascript_include_tag '/unify/assets/plugins/html5shiv.js' %>
