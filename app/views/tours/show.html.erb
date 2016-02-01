@@ -8,6 +8,15 @@
 </p>
 
 <p>
+  <strong>是否在热销产品中显示</strong>
+  <% if @tour.active.present? && @tour.active != "0" %>
+    是
+  <% else %>
+    否
+  <% end %>
+</p>
+
+<p>
   <strong>首页显示顺序</strong>
   <%= @tour.order %>
 </p>

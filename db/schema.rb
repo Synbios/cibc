@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160131162503) do
+ActiveRecord::Schema.define(version: 20160201065636) do
 
   create_table "days", force: :cascade do |t|
     t.integer  "number",            limit: 4
@@ -162,6 +162,7 @@ ActiveRecord::Schema.define(version: 20160131162503) do
     t.integer  "content_image_file_size",          limit: 4
     t.datetime "content_image_updated_at"
     t.string   "type",                             limit: 255
+    t.boolean  "active",                           limit: 1
   end
 
 end

@@ -66,6 +66,20 @@
     </section>
 
     <section>
+      <%= f.label :active, "热销产品", class: "label" %>
+      <div class="inline-group">
+          <label class="radio">
+            <%= f.radio_button :active, '1', checked: true %>
+            <i class="rounded-x"></i>显示
+          </label>
+          <label class="radio">
+            <%= f.radio_button :active, '0' %>
+            <i class="rounded-x"></i>隐藏
+          </label>
+      </div>
+    </section>
+
+    <section>
       <%= f.label :order, "显示顺序(不填或小于1则不在首页显示)", class: "label" %>
       <label class="input">
         <%= f.number_field :order %>

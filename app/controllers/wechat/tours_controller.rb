@@ -7,7 +7,7 @@ class Wechat::ToursController < ApplicationController
     if @tour_category.present?
       @tours = Tour.joins(:tour_categories).where("tours.order > ? AND tour_categories.id = ?", 0, @tour_category.id).order(:order)
      else
-      @tours = Tour.where("tours.order > ?", 0).order(:order)
+      @tours = Tour.where("tours.order > ? AND tours.active = ? AND tours.type is NULL", 0, 1).order(:order)
     end
     @main_slides = MainSlide.where(active: true)
     @wx_signature = wechat_generate_jsapi_signature request.url
