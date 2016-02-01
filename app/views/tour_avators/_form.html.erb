@@ -1,0 +1,144 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag '/unify/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag '/unify/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css', media: 'all', 'data-turbolinks-track' => true %>
+<% end %>
+
+<%= form_for @tour_avator, html: { multipart: true, class: "sky-form" } do |f| %>
+  <% if @tour_avator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tour_avator.errors.count, "error") %> prohibited this tour_avator from being saved:</h2>
+
+      <ul>
+      <% @tour_avator.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <fieldset>
+    <section>
+      <%= f.label :name, "名称/主标题", class: "label" %>
+      <label class="input">
+        <%= f.text_field :name %>
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :slider_subtitle, "副标题", class: "label" %>
+      <label class="input">
+        <%= f.text_field :slider_subtitle %>
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :content_image, "内容图片", class: "label" %>
+      <label for="file" class="input input-file">
+        <div class="button"><%= f.file_field :content_image %>选择文件</div><input type="text" readonly="">
+      </label>
+    </section>
+  
+    <section>
+      <%= f.label :features, "幻灯图下方亮点", class: "label" %>
+      <label class="textarea">
+        <%= f.text_area :features, rows: 20 %>
+      </label>
+      <div class="note"><strong>注意:</strong> 填入html元素.</div>
+    </section>
+  </fieldset>
+
+  <fieldset>
+    <section>
+      <%= f.label :tour_category_ids, "团队类型", class: "label" %>
+      <label class="select select-multiple">
+        <%#= f.select(:tour_category_ids,  options_for_select(TourCategory.all.collect{ |c| [c.name, c.id] }), { }, { multiple: true, include_blank: 'None', :size => 5 }) %>
+        <%= f.collection_select :tour_category_ids, TourCategory.all, :id, :name, {}, { :multiple => true, include_blank: 'None', :size => 5 } %>
+      </label>
+      <div class="note"><strong>提示:</strong> 按住Control或Command键可多项选择.</div>
+    </section>
+
+    <section>
+      <%= f.label :order, "显示顺序(不填或小于1则不在首页显示)", class: "label" %>
+      <label class="input">
+        <%= f.number_field :order %>
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :cover_title, "封面标题", class: "label" %>
+      <label class="input">
+        <%= f.text_field :cover_title %>
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :cover_info, "封面右下角信息", class: "label" %>
+      <label class="input">
+        <%= f.text_field :cover_info %>
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :cover_image_large, "封面大图", class: "label" %>
+      <label for="file" class="input input-file">
+        <div class="button"><%= f.file_field :cover_image_large %>选择文件</div><input type="text" readonly="">
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :cover_image_small_a, "封面小图1", class: "label" %>
+      <label for="file" class="input input-file">
+        <div class="button"><%= f.file_field :cover_image_small_a %>选择文件</div><input type="text" readonly="">
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :cover_image_small_b, "封面小图2", class: "label" %>
+      <label for="file" class="input input-file">
+        <div class="button"><%= f.file_field :cover_image_small_b %>选择文件</div><input type="text" readonly="">
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :cover_image_small_c, "封面小图3", class: "label" %>
+      <label for="file" class="input input-file">
+        <div class="button"><%= f.file_field :cover_image_small_c %>选择文件</div><input type="text" readonly="">
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :cover_image_small_d, "封面小图4", class: "label" %>
+      <label for="file" class="input input-file">
+        <div class="button"><%= f.file_field :cover_image_small_d %>选择文件</div><input type="text" readonly="">
+      </label>
+    </section>
+  </fieldset>
+
+  <fieldset>
+    <section>
+      <%= f.label :wechat_share_title, "微信分享标题", class: "label" %>
+      <label class="input">
+        <%= f.text_field :wechat_share_title %>
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :wechat_share_description, "微信分享描述", class: "label" %>
+      <label class="input">
+        <%= f.text_field :wechat_share_description %>
+      </label>
+    </section>
+
+    <section>
+      <%= f.label :wechat_share_icon, "微信分享小图标", class: "label" %>
+      <label for="file" class="input input-file">
+        <div class="button"><%= f.file_field :wechat_share_icon %>选择文件</div><input type="text" readonly="">
+      </label>
+    </section>
+  </fieldset>
+
+  <footer>
+    <button type="submit" class="btn-u">提交</button>
+    <button type="button" class="btn-u btn-u-default" onclick="window.history.back();">Back</button>
+  </footer>
+<% end %>

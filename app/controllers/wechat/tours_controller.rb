@@ -24,4 +24,5 @@ class Wechat::ToursController < ApplicationController
     @wx_signature = wechat_generate_jsapi_signature request.url
     render layout: "shijiebang"
   end
+
 end

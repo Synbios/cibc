@@ -8,6 +8,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th>团队/图片卡</th>
         <th>团队名称</th>
         <th>具体操作</th>
         <th>线路</th>
@@ -19,15 +20,29 @@
     <tbody>
       <% @tours.each do |tour| %>
         <tr>
-          <td><%= tour.name %></td>
-          <td>
-            <%= link_to '查看', tour, class: "btn btn-success btn-xs" %>
-            <%= link_to '修改', edit_tour_path(tour), class: "btn btn-warning btn-xs" %>
-            <%= link_to '删除', tour, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
-          </td>
-          <td><%= link_to '添加/修改', tour_routes_path(tour) %></td>
-          <td><%= link_to '添加/修改', tour_slides_path(tour) %></td>
-          <td><%= link_to '添加/修改', tour_high_lights_path(tour) %></td>
+          <% if tour.instance_of? TourAvator %>
+            <td>图片卡</td>
+            <td><%= tour.name %></td>
+            <td>
+              <%= link_to '查看', tour, class: "btn btn-success btn-xs" %>
+              <%= link_to '修改', edit_tour_avator_path(tour), class: "btn btn-warning btn-xs" %>
+              <%= link_to '删除', tour, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+            </td>
+            <td>N/A</td>
+            <td><%= link_to '添加/修改', tour_slides_path(tour) %></td>
+            <td><%= link_to '添加/修改', tour_high_lights_path(tour) %></td>
+          <% else %>
+            <td>团队</td>
+            <td><%= tour.name %></td>
+            <td>
+              <%= link_to '查看', tour, class: "btn btn-success btn-xs" %>
+              <%= link_to '修改', edit_tour_path(tour), class: "btn btn-warning btn-xs" %>
+              <%= link_to '删除', tour, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+            </td>
+            <td><%= link_to '添加/修改', tour_routes_path(tour) %></td>
+            <td><%= link_to '添加/修改', tour_slides_path(tour) %></td>
+            <td><%= link_to '添加/修改', tour_high_lights_path(tour) %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
@@ -36,7 +51,8 @@
   <br>
 
   <%= link_to '新建团队', new_tour_path %>
-  <%= link_to '首页幻灯片', main_slides_path %>
+  <%= link_to '新建图片卡', new_tour_avator_path %>
+  <%= link_to '首页轮播图', main_slides_path %>
   <%= link_to '团队类别', tour_categories_path %>
 </div>
 

@@ -2,33 +2,33 @@
 
 <p>
   <strong>类型:</strong>
-  <%  @tour.tour_categories.each do |tour_category| %>
+  <%  @tour_avator.tour_categories.each do |tour_category| %>
     <%= tour_category.name %>
   <% end %>
 </p>
 
 <p>
   <strong>首页显示顺序</strong>
-  <%= @tour.order %>
+  <%= @tour_avator.order %>
 </p>
 
 <p>
   <strong>微信分享标题</strong>
-  <%= @tour.wechat_share_title %>
+  <%= @tour_avator.wechat_share_title %>
 </p>
 
 <p>
   <strong>微信分享描述</strong>
-  <%= @tour.wechat_share_description %>
+  <%= @tour_avator.wechat_share_description %>
 </p>
 
 <p>
   <strong>微信分享小图标: </strong>
-  <%= image_tag @tour.wechat_share_icon.url if @tour.wechat_share_icon.present? %>
+  <%= image_tag @tour_avator.wechat_share_icon.url if @tour_avator.wechat_share_icon.present? %>
 </p>
 
 
-<%= link_to '修改', edit_tour_path(@tour) %> |
+<%= link_to '修改', edit_tour_avator_path(@tour_avator) %> |
 <%= link_to '返回列表', tours_path %>
 <hr style="margin: 0">
 <div class="sys-masthead">
@@ -41,42 +41,42 @@
   <br>
   <div class="container margin-bottom-10">
     <div class="index_tour_item">
-      <div class="hd"><span class="price"><em>￥<%= @tour.start_price %> </em>起</span>
+      <div class="hd"><span class="price"><em>￥<%= @tour_avator.start_price %> </em>起</span>
         <a href="#">
-          <div class="title"><%= @tour.cover_title.html_safe %></div>
+          <div class="title"><%= @tour_avator.cover_title.html_safe %></div>
         </a>
       </div>
       <div class="bd">
         <div class="pic">
           <a href="#">
-            <%= image_tag @tour.cover_image_large.url %>
+            <%= image_tag @tour_avator.cover_image_large.url %>
           </a>
           <i class="icon-a-list-intro"></i>
           <i class="icon-a-list-pic-cover"></i>
 
           <div class="info">
-            <div class="txt count"><%= @tour.cover_info.html_safe %></div>
+            <div class="txt count"><%= @tour_avator.cover_info.html_safe %></div>
           </div>
         </div>
         <ul class="fn-list">
           <li>
             <a href="#">
-              <%= image_tag @tour.cover_image_small_a.url %>
+              <%= image_tag @tour_avator.cover_image_small_a.url %>
             </a>
           </li>
           <li>
             <a href="#">
-              <%= image_tag @tour.cover_image_small_b.url %>
+              <%= image_tag @tour_avator.cover_image_small_b.url %>
             </a>
           </li>
           <li>
             <a href="#">
-              <%= image_tag @tour.cover_image_small_c.url %>
+              <%= image_tag @tour_avator.cover_image_small_c.url %>
             </a>
           </li>
           <li>
             <a href="#">
-              <%= image_tag @tour.cover_image_small_d.url %>
+              <%= image_tag @tour_avator.cover_image_small_d.url %>
             </a>
           </li>
         </ul>
@@ -89,7 +89,7 @@
 <div class="tp-banner-container">
   <div class="tp-banner">
     <ul>
-      <% @tour.slides.each do |slide| %>
+      <% @tour_avator.slides.each do |slide| %>
       <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="mainSlide">
         <!-- MAIN IMAGE -->
         <%= image_tag slide.image.url, alt: "darkblurbg", :"data-bgfit" => "cover", :"data-bgposition" => "left top", :"data-bgrepeat" => "no-repeat" %>
@@ -103,7 +103,7 @@
         data-easing="Back.easeInOut"
         data-endeasing="Power1.easeIn"
         data-endspeed="300">
-        <%= @tour.name.html_safe  unless @tour.name.nil? %>
+        <%= @tour_avator.name.html_safe  unless @tour_avator.name.nil? %>
         </div>
 
         <!-- LAYER -->
@@ -118,7 +118,7 @@
         data-endeasing="Power1.easeIn"
         data-captionhidden="off"
         style="z-index: 6">
-        <%= @tour.slider_subtitle.html_safe unless @tour.slider_subtitle.nil? %>
+        <%= @tour_avator.slider_subtitle.html_safe unless @tour_avator.slider_subtitle.nil? %>
         </div>
 
         <!-- LAYER -->
@@ -147,11 +147,11 @@
 </div>
 <div class="no-padding">
   <div class="container">
-    <%= @tour.features.html_safe unless @tour.features.nil? %>
+    <%= @tour_avator.features.html_safe unless @tour_avator.features.nil? %>
   </div>
 
   <div class="container huang_features_2">
-    <% @tour.high_lights.each do |high_light| %>
+    <% @tour_avator.high_lights.each do |high_light| %>
       <div class="col-xs-6">
         <%= image_tag high_light.image.url %>
       </div>
@@ -160,12 +160,7 @@
 
 </div>
 
-<div class="container margin-bottom-10">
-  <div class="headline"><h3>行程地图</h3></div>
-  <%= image_tag @tour.tour_map.url(:standard), style: "width:100%" %>
-</div>
-
-<div class="panel-group acc-v1 huang_accordion" id="accordion-1">
-  <h3 class="according_heading">预定须知</h3>
-  <%= @tour.terms.html_safe unless @tour.terms.nil? %>
-</div>
+<%#= image_tag @tour_avator.content_image.url(:minified), style: "width:100%" %>
+<% @shards.each do |shard| %>
+  <%= image_tag shard.image.url, style: "width:100%" %>
+<% end %>

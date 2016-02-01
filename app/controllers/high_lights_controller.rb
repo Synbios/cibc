@@ -17,7 +17,7 @@ class HighLightsController < ApplicationController
 
   # GET /high_lights/new
   def new
-    @tour = Tour.find_by_id params[:tour_id]
+    @tour = Tour.find_by_id(params[:tour_id]).becomes(Tour)
     @high_light = HighLight.new
     render layout: "shijiebang"
   end

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   namespace :wechat do
     resources :tours, only: [:index, :show]
+    resources :tour_avators, only: [:show]
     resources :days, only: [:show]
     get 'api', to: 'api#check'
     post 'api', to: 'api#message'
@@ -17,6 +18,11 @@ Rails.application.routes.draw do
       resources :departures, shallow: true
     end
     
+    resources :slides, shallow: true
+    resources :high_lights, shallow: true
+  end
+
+  resources :tour_avators do
     resources :slides, shallow: true
     resources :high_lights, shallow: true
   end

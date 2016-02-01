@@ -1,0 +1,39 @@
+<div class="container container-sm">
+  <p id="notice"><%= notice %></p>
+
+  <div class="headline">
+    <h2>图片卡总表</h2>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>图片卡名称</th>
+        <th>具体操作</th>
+        <th>幻灯图</th>
+        <th>亮点图</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tour_avators.each do |tour_avator| %>
+        <tr>
+          <td><%= tour_avator.name %></td>
+          <td>
+            <%= link_to '查看', tour_avator, class: "btn btn-success btn-xs" %>
+            <%= link_to '修改', edit_tour_path(tour_avator), class: "btn btn-warning btn-xs" %>
+            <%= link_to '删除', tour_avator, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+          </td>
+          <td><%= link_to '添加/修改', tour_slides_path(tour_avator) %></td>
+          <td><%= link_to '添加/修改', tour_high_lights_path(tour_avator) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to '新建图片卡', new_tour_avator_path %>
+  <%= link_to '团队总表', tours_path %>
+</div>
+

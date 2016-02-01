@@ -17,7 +17,7 @@ class SlidesController < ApplicationController
 
   # GET /slides/new
   def new
-    @tour = Tour.find_by_id params[:tour_id]
+    @tour = Tour.find_by_id(params[:tour_id]).becomes(Tour)
     @slide = Slide.new
     render layout: "shijiebang"
   end
@@ -30,7 +30,7 @@ class SlidesController < ApplicationController
   # POST /slides
   # POST /slides.json
   def create
-    @tour = Tour.find_by_id params[:tour_id]
+    @tour = Tour.find_by_id(params[:tour_id])
     @slide = Slide.new(slide_params)
     @slide.tour = @tour
 
