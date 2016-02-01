@@ -58,7 +58,7 @@
 <div class="fw-slider owl-carousel owl-theme margin-bottom-10">
   <% @main_slides.each do |main_slide| %>
   <div class="item">
-    <img class="lazy" data-original="<%= main_slide.image.url %>">
+    <img class="lazy" data-original="<%= main_slide.image.url(:medium) %>">
     <%#= image_tag main_slide.image.url , alt: "" %>
   </div>
   <% end %>
@@ -165,7 +165,7 @@
       <div class="bd">
         <div class="pic">
           <%= link_to wechat_tour_path tour do %>
-            <img class="lazy" data-original="<%= tour.cover_image_large.url %>">
+            <img class="lazy" data-original="<%= tour.cover_image_large.url(:medium) %>">
             <%#= image_tag tour.cover_image_large.url %>
           <% end %>
           <i class="icon-a-list-intro"></i>
@@ -178,25 +178,25 @@
         <ul class="fn-list">
           <li>
             <%= link_to wechat_tour_path tour do %>
-              <img class="lazy" data-original="<%= tour.cover_image_small_a.url %>">
+              <img class="lazy" data-original="<%= tour.cover_image_small_a.url(:medium) %>">
               <%#= image_tag tour.cover_image_small_a.url %>
             <% end %>
           </li>
           <li>
             <%= link_to wechat_tour_path tour do %>
-              <img class="lazy" data-original="<%= tour.cover_image_small_b.url %>">
+              <img class="lazy" data-original="<%= tour.cover_image_small_b.url(:medium) %>">
               <%#= image_tag tour.cover_image_small_b.url %>
             <% end %>
           </li>
           <li>
             <%= link_to wechat_tour_path tour do %>
-              <img class="lazy" data-original="<%= tour.cover_image_small_c.url %>">
+              <img class="lazy" data-original="<%= tour.cover_image_small_c.url(:medium) %>">
               <%#= image_tag tour.cover_image_small_c.url %>
             <% end %>
           </li>
           <li>
             <%= link_to wechat_tour_path tour do %>
-              <img class="lazy" data-original="<%= tour.cover_image_small_d.url %>">
+              <img class="lazy" data-original="<%= tour.cover_image_small_d.url(:medium) %>">
               <%#= image_tag tour.cover_image_small_d.url %>
             <% end %>
           </li>
