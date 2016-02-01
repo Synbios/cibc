@@ -116,6 +116,7 @@
     <div class="tp-bannertimer tp-bottom"></div>
   </div>
 </div>
+
 <div style="width: 100%">
   <%= image_tag "/img/huang/t1-ad-1.jpg", style: "width: 100%; margin: 10px 0 20px 0" %>
 </div>
@@ -144,18 +145,3 @@
     <a href="tel:02886750011" class="btn-u btn-u-orange" type="button">电话咨询</a>
   </div>
 </div>
-
-
-<% content_for :script do %>
-<script>
-  
-
-  $(document).ready(function() {
- 
-    $("img.lazy").lazyload({
-        effect : "fadeIn"
-      });
- 
-  });
-</script>
-<% end %>

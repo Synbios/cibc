@@ -58,7 +58,8 @@
 <div class="fw-slider owl-carousel owl-theme margin-bottom-10">
   <% @main_slides.each do |main_slide| %>
   <div class="item">
-    <%= image_tag main_slide.image.url , alt: "" %>
+    <img class="lazy" data-original="<%= main_slide.image.url %>">
+    <%#= image_tag main_slide.image.url , alt: "" %>
   </div>
   <% end %>
 </div>
@@ -152,7 +153,7 @@
     </h2>
   </div>
 
-  <div class="container margin-bottom-10">
+  <div class="container margin-bottom-10 mainContent">
 
     <% @tours.each do |tour| %>
     <div class="index_tour_item">
@@ -164,7 +165,8 @@
       <div class="bd">
         <div class="pic">
           <%= link_to wechat_tour_path tour do %>
-            <%= image_tag tour.cover_image_large.url %>
+            <img class="lazy" data-original="<%= tour.cover_image_large.url %>">
+            <%#= image_tag tour.cover_image_large.url %>
           <% end %>
           <i class="icon-a-list-intro"></i>
           <i class="icon-a-list-pic-cover"></i>
@@ -176,22 +178,26 @@
         <ul class="fn-list">
           <li>
             <%= link_to wechat_tour_path tour do %>
-              <%= image_tag tour.cover_image_small_a.url %>
+              <img class="lazy" data-original="<%= tour.cover_image_small_a.url %>">
+              <%#= image_tag tour.cover_image_small_a.url %>
             <% end %>
           </li>
           <li>
             <%= link_to wechat_tour_path tour do %>
-              <%= image_tag tour.cover_image_small_b.url %>
+              <img class="lazy" data-original="<%= tour.cover_image_small_b.url %>">
+              <%#= image_tag tour.cover_image_small_b.url %>
             <% end %>
           </li>
           <li>
             <%= link_to wechat_tour_path tour do %>
-              <%= image_tag tour.cover_image_small_c.url %>
+              <img class="lazy" data-original="<%= tour.cover_image_small_c.url %>">
+              <%#= image_tag tour.cover_image_small_c.url %>
             <% end %>
           </li>
           <li>
             <%= link_to wechat_tour_path tour do %>
-              <%= image_tag tour.cover_image_small_d.url %>
+              <img class="lazy" data-original="<%= tour.cover_image_small_d.url %>">
+              <%#= image_tag tour.cover_image_small_d.url %>
             <% end %>
           </li>
         </ul>

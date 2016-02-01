@@ -18,6 +18,10 @@ jQuery(document).ready(function() {
   RevolutionSlider.initRSfullWidthD();
   App.initParallaxBg();
 
+  $("img.lazy").lazyload({
+    effect : "fadeIn"
+  });
+
 
   $(".fw-slider").owlCarousel({
       navigation: false, // Show next and prev buttons
@@ -36,4 +40,15 @@ jQuery(document).ready(function() {
       // itemsMobile : false
  
   });
+
+  // jQuery(document).ready(function($) {  
+  //   $(document).ready(function(){
+  //     $('#preloader').fadeOut('slow',function(){
+  //       //$(this).remove();
+  //       $('.mainContent').fadeIn('slow');
+  //     });
+
+  //   });
+  // });
+
 });
