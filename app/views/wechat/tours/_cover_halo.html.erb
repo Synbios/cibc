@@ -1,0 +1,97 @@
+<% if tour.instance_of? TourAvator %>
+  <div class="index_tour_item">
+    <div class="hd"><span class="price"><em>￥<%= tour.start_price %> </em>起</span>
+      <%= link_to wechat_tour_avator_path tour do %>
+        <div class="title"><%= tour.cover_title.html_safe %></div>
+      <% end %>
+    </div>
+    <div class="bd">
+      <div class="pic">
+        <%= link_to wechat_tour_avator_path tour do %>
+          <img class="lazy" data-original="<%= tour.cover_image_large.url(:medium) %>">
+          <%#= image_tag tour.cover_image_large.url %>
+        <% end %>
+        <i class="icon-a-list-intro"></i>
+        <i class="icon-a-list-pic-cover"></i>
+
+        <div class="info">
+          <div class="txt count"><%= tour.cover_info.html_safe %></div>
+        </div>
+      </div>
+      <ul class="fn-list">
+        <li>
+          <%= link_to wechat_tour_avator_path tour do %>
+            <img class="lazy" data-original="<%= tour.cover_image_small_a.url(:medium) %>">
+            <%#= image_tag tour.cover_image_small_a.url %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to wechat_tour_avator_path tour do %>
+            <img class="lazy" data-original="<%= tour.cover_image_small_b.url(:medium) %>">
+            <%#= image_tag tour.cover_image_small_b.url %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to wechat_tour_avator_path tour do %>
+            <img class="lazy" data-original="<%= tour.cover_image_small_c.url(:medium) %>">
+            <%#= image_tag tour.cover_image_small_c.url %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to wechat_tour_avator_path tour do %>
+            <img class="lazy" data-original="<%= tour.cover_image_small_d.url(:medium) %>">
+            <%#= image_tag tour.cover_image_small_d.url %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+<% else %>
+  <div class="index_tour_item">
+    <div class="hd"><span class="price"><em>￥<%= tour.start_price %> </em>起</span>
+      <%= link_to wechat_tour_path tour do %>
+        <div class="title"><%= tour.cover_title.html_safe %></div>
+      <% end %>
+    </div>
+    <div class="bd">
+      <div class="pic">
+        <%= link_to wechat_tour_path tour do %>
+          <img class="lazy" data-original="<%= tour.cover_image_large.url(:medium) %>">
+          <%#= image_tag tour.cover_image_large.url %>
+        <% end %>
+        <i class="icon-a-list-intro"></i>
+        <i class="icon-a-list-pic-cover"></i>
+
+        <div class="info">
+          <div class="txt count"><%= tour.cover_info.html_safe %></div>
+        </div>
+      </div>
+      <ul class="fn-list">
+        <li>
+          <%= link_to wechat_tour_path tour do %>
+            <img class="lazy" data-original="<%= tour.cover_image_small_a.url(:medium) %>">
+            <%#= image_tag tour.cover_image_small_a.url %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to wechat_tour_path tour do %>
+            <img class="lazy" data-original="<%= tour.cover_image_small_b.url(:medium) %>">
+            <%#= image_tag tour.cover_image_small_b.url %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to wechat_tour_path tour do %>
+            <img class="lazy" data-original="<%= tour.cover_image_small_c.url(:medium) %>">
+            <%#= image_tag tour.cover_image_small_c.url %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to wechat_tour_path tour do %>
+            <img class="lazy" data-original="<%= tour.cover_image_small_d.url(:medium) %>">
+            <%#= image_tag tour.cover_image_small_d.url %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+<% end %>
