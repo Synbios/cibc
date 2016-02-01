@@ -53,7 +53,7 @@
 <% end %>
 
 
-<div class="sys-masthead">
+<div class="sys-masthead mainContent">
   <%= link_to wechat_tours_path, class: "sys-masthead-logo" do %>
     <%= image_tag "huang/logo.png" %>
   <% end %>
@@ -121,7 +121,7 @@
 <div style="width: 100%">
   <%= image_tag "/img/huang/t1-ad-1.jpg", style: "width: 100%; margin: 10px 0 20px 0" %>
 </div>
-<div class="no-padding">
+<div class="no-padding mainContent">
   <div class="container">
     <%= @tour.features.html_safe unless @tour.features.nil? %>
   </div>
@@ -136,12 +136,12 @@
 
 </div>
 
-<div class="container margin-bottom-10">
+<div class="container margin-bottom-10 mainContent">
   <div class="headline"><h3>行程地图</h3></div>
   <%= image_tag @tour.tour_map.url(:standard), style: "width:100%" %>
 </div>
 
-<div class="container tab-content margin-bottom-10">
+<div class="container tab-content margin-bottom-10 mainContent">
   <% @routes.each do |route| %>
     <div class="tab-pane fade in <% if route == @routes.first %>active<% end %> route_<%= route.id %>">
       <div id="itinery_slider_<%= route.id %>" class="owl-carousel owl-theme itinery_slider">
@@ -156,7 +156,7 @@
   <% end %>
 </div>
 
-<div class="container">
+<div class="container mainContent">
   <div class="tab-v1 huang_price">
     <ul class="nav nav-tabs">
       <% @routes.each do |route| %>
@@ -175,7 +175,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container mainContent">
   <div class="tab-content">
     <% @routes.each do |route| %>
       <div class="tab-pane fade in <% if route == @routes.first %>active<% end %> route_<%= route.id %>">
@@ -212,7 +212,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container mainContent">
   <div class="tag-box tag-box-v3 margin-bottom-20 telephone">
     <h2>产品: <%= @tour.name %></h2>
     <a href="tel:15282317143" class="btn-u btn-u-orange" type="button">电话咨询</a>
@@ -221,7 +221,7 @@
 
 
 
-<div class="panel-group acc-v1 huang_accordion" id="accordion-1">
+<div class="panel-group acc-v1 huang_accordion mainContent" id="accordion-1">
   <h3 class="according_heading">预定须知</h3>
   <%= @tour.terms.html_safe unless @tour.terms.nil? %>
 </div>

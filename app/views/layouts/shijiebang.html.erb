@@ -37,7 +37,17 @@
   
   <%= yield :stylesheets %>
   <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="preloader"></div>
+  <div class="wrapper">
+    <%#= render "layouts/header" %>
+    <%= yield %>
+    <%#= render "layouts/footer" %>
+  </div>
 
+  <%# modals %>
+  <%= yield :modals %>
   <!-- weixin -->
   <%= javascript_include_tag 'http://res.wx.qq.com/open/js/jweixin-1.0.0.js' %>
   <!-- JS files -->
@@ -74,17 +84,5 @@
     <%= javascript_include_tag '/unify/assets/plugins/html5shiv.js' %>
     <%= javascript_include_tag '/unify/assets/plugins/placeholder-IE-fixes.js ' %>
   <![endif]-->
-</head>
-<body>
-  <div id="preloader"></div>
-  <div class="mainContent wrapper">
-    <%#= render "layouts/header" %>
-    <%= yield %>
-    <%#= render "layouts/footer" %>
-  </div>
-
-  <%# modals %>
-  <%= yield :modals %>
-  
 </body>
 </html>
