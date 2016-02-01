@@ -4,7 +4,7 @@ class Wechat::TourAvatorsController < ApplicationController
   def show
     @domain_url = "www.jhtwork.com"
     @tour = TourAvator.find_by_id params[:id]
-    @shards = @tour.shards
+    @shards = @tour.shards.order(:order)
     @wx_signature = wechat_generate_jsapi_signature request.url
     render layout: "shijiebang"
   end
