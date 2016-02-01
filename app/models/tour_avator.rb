@@ -1,5 +1,4 @@
 class TourAvator < Tour
-  after_save :slice_content_image
 
   has_attached_file :content_image, :styles => { :minified => {:format => "jpg"} }, :processors => [:minify], default_url: "/images/:style/missing.png"
   validates_attachment_content_type :content_image, content_type: /\Aimage\/.*\Z/

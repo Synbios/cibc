@@ -35,7 +35,10 @@ class TourAvatorsController < ToursController
 
     respond_to do |format|
       if @tour_avator.save
-        format.html { redirect_to @tour_avator, notice: 'tour_avator was successfully created.' }
+        format.html {
+          @tour_avator.slice_content_image 
+          redirect_to @tour_avator, notice: 'tour_avator was successfully created.' 
+        }
       else
         format.html { render :new }
       end
@@ -48,7 +51,10 @@ class TourAvatorsController < ToursController
     @tour_avator = TourAvator.find_by_id params[:id]
     respond_to do |format|
       if @tour_avator.update(tour_avator_params)
-        format.html { redirect_to @tour_avator, notice: 'tour_avator was successfully updated.' }
+        format.html {
+          @tour_avator.slice_content_image 
+          redirect_to @tour_avator, notice: 'tour_avator was successfully updated.' 
+        }
       else
         format.html { render :edit }
       end
