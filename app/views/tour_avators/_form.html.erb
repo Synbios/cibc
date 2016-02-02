@@ -57,6 +57,13 @@
       <div class="note"><strong>提示:</strong> 按住Control或Command键可多项选择.</div>
     </section>
 
+     <section>
+      <%= f.label :master_price, "显示价格（签证等专用）", class: "label" %>
+      <label class="input">
+        <%= f.number_field :master_price, :step => 'any' %>
+      </label>
+    </section>
+
     <section>
       <%= f.label :order, "显示顺序(不填或小于1则不在首页显示)", class: "label" %>
       <label class="input">

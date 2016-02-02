@@ -76,7 +76,8 @@ class TourAvatorsController < ToursController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_avator_params
       params.require(:tour_avator).permit(:name, :slider_subtitle, 
-        :features, :order, :cover_title, :cover_info, 
+        :features, :order, :cover_title, :cover_info,
+        :master_price, 
         :cover_image_large, :cover_image_small_a, :cover_image_small_b, :cover_image_small_c, :cover_image_small_d, 
         :wechat_share_title, :wechat_share_description, :wechat_share_icon, 
         :content_image, :tour_category_ids => [])

@@ -1,6 +1,6 @@
 <% if tour.instance_of? TourAvator %>
   <div class="index_tour_item">
-    <div class="hd"><span class="price"><em>￥<%= tour.start_price %> </em>起</span>
+    <div class="hd"><% if tour.master_price.present? %><span class="price"><em>￥<%= tour.master_price %> </em>起</span><% end %>
       <%= link_to wechat_tour_avator_path tour do %>
         <div class="title"><%= tour.cover_title.html_safe %></div>
       <% end %>
